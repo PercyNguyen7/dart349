@@ -67,13 +67,15 @@ main{
      background-image: linear-gradient(black, var(--clr-yellow));
     min-height: 100vh;
 }
-
+h1{
+    font-size:clamp(1.5rem,10vw,2.5rem)
+}
 nav{
    background-color:var(--clr-yellow);
    padding:1rem 0;
    background-color: black;
    /* border-bottom: 1px solid var(--clr-light-gray); */
-   border-top: 3px solid var(--clr-light-gray);
+   /* border-top: 3px solid var(--clr-light-gray); */
    overflow: hidden;
 }
 nav a {
@@ -170,7 +172,18 @@ p{
     margin: 0.5rem 0;
     font-size:1.25rem;
 }
+figure,img{
+    width:100%;
+    max-width: 100%;
+    margin:1rem 0;
+}
 
+img{
+    filter: grayscale(0.5);
+}
+img:hover{
+    filter: grayscale(0);
+}
 .content-wrapper{
     /* background-color: red; */
     position: relative;
@@ -182,7 +195,7 @@ p{
 }
 .content{
     margin:clamp(4rem,10vw,9rem) 1rem;
-    padding:5rem 2rem;
+    padding:3rem 2rem;
     /* border-left:1px solid black;
     border-right:1px solid black; */
     /* height:50rem; */
