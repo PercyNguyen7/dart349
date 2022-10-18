@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Men's Guide 101</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="news.html" class="alert active-nav">News</a>
+        <a class="alert">Body Building</a>
+        <a  class="alert">Sports</a>
+        <a class="alert">Height Surgery</a>
+    </nav>
+</header>
+
+ <main>
+    <article>
+        <h1>A Man's Guide to Fashion (NEW)</h1>
+        <h2>In this extensive guide, we teach you how to dress like a real man.</h2>
+
+        <p>FIRST... WATCH THIS 
+            <a href="https://www.youtube.com/watch?v=EYKDlj66kDc">VIDEO</a> Andrew Tate is the idol all men should strive for. Get Behind his mindset now.
+        </p>
+        <p>But before even thinking about buying new clothes, take a good look at yourself in the mirror. Do you see good biceps, abs and calves muscles? If not, HIT THE GYM YOU NOODLE</p>
+        <p>Cold colors ONLY. Because you're a man, and a man is cold and cool like that shit. That or RED to show them you're OUT FOR BLOOD</p>
+        
+        <p id="rejected-color-p"> How about <span class="pink-text">Pink?</span> or <span class="orange-text"> orange?</span> or <span class="yellow-text"> yellow?</span></p>
+        <figure>
+            <img src="assets/images/sam-sabourin-lifting.jpg" alt="Man Working Out">
+            <figcaption>A Manly Man Doing a Manly Workout</figcaption>
+        </figure>
+      
+        <p>Now take off EVERYTHING. FLEX THOSE BICEPS. THOSE GAINS. ROAR. ATTRACT THE FEMALE WITH A RESOUNDING MATING CALL.</p>
+        <p>Why wear clothes when you have to take them off after the date anyway??</p>
+        <p>Written by the Alpha Male of 2022</p>
+        <figure>
+            <img src="assets/images/erik-lucatero-shirtless.jpg" alt="Shirtless-Man">
+            <figcaption>The Shirtless, Ripped and Desirable Man</figcaption>
+        </figure>
+    </article>
+    <article>
+        <h1>A Guide To Feelings For Men </h1>
+        <h2>In this extensive guide, we teach you what it means to be men.</h2>
+        <p>So how do you cope with feelings? <span>YOU DON'T.</span> That's what it means to be a man. A manly man who mans up and fakes all his emptions is the modern man.</p>
+        <p>Did you know showing emotions is a sign of weakness? Well I bet you fuckin' didn't up until now. A strong man can takes an ass whooping with the stare of indifference. Whatever life throws at you, just man up and beat it.</p>
+    
+        <figure>
+            <img src="assets/images/christian-buehner-unsplash.jpg" alt="A Muscular Manly Man">
+            <figcaption>The Manly Man</figcaption>
+        </figure>
+        <p>What to do when you're sad? You HIT THE GYM LIKE A REAL MAN WOULD. ONLY PUSSIES WHINE AND CRY ABOUT THEIR PROBLEMS.</p>
+        <p>A man is only love if he provides so better buckle up bucko and keep on a straight face</p>
+        <p>Written by the Alpha Male of 2022</p>
+    
+    </article>
+
+    <aside>
+        <h2>Man up by reading the following!</h2>
+        <div>
+            <a href="joy.html">A Guide to Deal with Joy</a>
+            <p>Learn how to deal with joy as menly men?</p>
+         </div>
+         <div>
+            <a href="sorrow.html">A Guide to Deal with Sorrow</a>
+            <p>Learn how to deal with sorrow as menly men?</p>
+        </div>
+        <div>
+            <a href="astonishment.html">A Guide to Deal with Astonishment</a>
+            <p>Learn how to deal with astonishment as menly men?</p>
+        </div>
+       
+    </aside>
+
+
+</main>
+
+    <footer>
+        <span>Copyright by ManUpBoy.Inc</span>
+    </footer>
+
+</body>
+<script>
+    let navChildren = document.getElementsByClassName('alert');
+    for (let n = 0; n < navChildren.length; n++){
+  navChildren[n].addEventListener("click", () => {
+        alert('MAN UP BOI');
+    });
+}
+    var rejectedColorsP = document.getElementById("rejected-color-p");
+
+    rejectedColorsP.addEventListener("click", ()=>{
+        alert('get that feminine shit out of here. WE ARE MEN. MEN DONT ASSOCIATE WITH WARM FEMININE COLORS');
+        rejectedColorsP.classList.add("fly-out");
+});
+
+console.log('hello');
+</script>
+
+</html>
