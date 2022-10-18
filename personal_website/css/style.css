@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;1,300&family=Inconsolata:wght@300;400&display=swap');
+
 @font-face {
     font-family: "Fog";
     src: url(../assets/fonts/FoglihtenNo07.otf) format('opentype');
@@ -38,13 +40,10 @@ picture {
     --clr-dark-gray: rgb(32,32,32);
     --clr-light-gray: rgb(201, 201, 201);
     --ff-serif: "Fog",serif;
-    --ff-sans: Tahoma, sans-serif;
+    --ff-sans: "Barlow Condensed", sans-serif;
 
           /* font-sizes */
-          --fs-900: 5rem;
-          --fs-800: clamp(2.5rem,10vw,4rem);
-          --fs-700: clamp(1.75rem,10vw,3rem);
-          --fs-600: clamp(1.25rem,10vw,1.5rem);
+
           --fs-500: 1.65rem;
           --fs-400: 1.25rem;
           --fs-300: 1rem;
@@ -64,47 +63,50 @@ picture {
 .fs-600 {
     line-height: 1.1;
 }
-body{
-    background-image: linear-gradient( black 10%, var(--clr-dark-gray) 30%,var(--clr-yellow));
+main{
+     background-image: linear-gradient(black, var(--clr-yellow));
     min-height: 100vh;
 }
 
 nav{
    background-color:var(--clr-yellow);
-   padding:2px 0;
+   padding:1rem 0;
    background-color: black;
-   border-bottom: 2px solid var(--clr-light-gray);
-   /* border-top: 3px solid var(--clr-yellow); */
+   /* border-bottom: 1px solid var(--clr-light-gray); */
+   border-top: 3px solid var(--clr-light-gray);
    overflow: hidden;
 }
-/* a{
-    background-color: var(--clr-dark-gray);
-    box-shadow: 0 0 25px 15px var(--clr-dark-gray);
-    padding:0.5rem 1rem;
-    transition: all 400ms;
-}
-a:active{
-    color: var(--clr-yellow);
-}
-a:hover{
-    transform:scale(1.1);
-    background-color: rgb(212, 212, 212);
-    color:var(--clr-dark-gray);box-shadow: 0 0 20px 10px rgb(212, 212, 212);
-
-} */
 nav a {
     font-weight:600;
     overflow: hidden;
     position: relative;
     display: inline-block;
     /* background-color: black; */
-    box-shadow: 0 0 15px 10px var(--clr-dark-gray);
-    padding:1rem 2rem;
-    /* margin:0.2rem 0; */
+    /* border:1px solid var(--clr-dark-gray); */
+    /* box-shadow: 0 0 10px 1px var(--clr-light-gray); */
     transition: all 400ms;
   }
+nav a:first-child{
+    padding:0.5rem 2rem 0.5rem 0;
+}
+nav a:nth-child(2){
+    padding:0.5rem 1rem;
+    text-align: center;
 
-  
+}
+nav a:last-child{
+    padding:0.5rem 0rem 0.5rem 2rem;
+    text-align: right;
+}
+nav a:first-child:after{
+    text-align: left;
+} 
+nav a:nth-child(2):after{
+    text-align: center;
+} 
+nav a:last-child:after{
+    text-align: right;
+} 
   nav a::before,
   nav a::after {
    content: '';
@@ -116,7 +118,7 @@ nav a {
   nav a::before {
     background-color: var(--clr-yellow);
     height: 2px;
-    top:0px;
+    bottom:2px;
     transform-origin: 100% 50%;
     transform: scaleX(0);
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
@@ -126,7 +128,8 @@ nav a {
     height: 100%;
     color:var(--clr-yellow) !important;
     /* top: 0; */
-    line-height: 1rem;
+    right:0 !important;
+    /* line-height: 1rem; */
     text-align: center;
     transform-origin: 100% 50%;
     transform: translate3d(500%, 0, 0);
@@ -160,11 +163,12 @@ nav a {
 }
 
 main{
-    margin:2rem 0;
+    padding:2rem 0;
     /* height:100vh; */
 }
 p{
     margin: 0.5rem 0;
+    font-size:1.25rem;
 }
 
 .content-wrapper{
@@ -178,16 +182,60 @@ p{
 }
 .content{
     margin:clamp(4rem,10vw,9rem) 1rem;
-    padding:2rem 2rem;
+    padding:5rem 2rem;
     /* border-left:1px solid black;
     border-right:1px solid black; */
     /* height:50rem; */
     border-left: 2px solid var(--clr-yellow);
     border-top: 2px solid var(--clr-yellow);
-    border-bottom: 1px solid var(--clr-light-gray);
-    border-right: 1px solid var(--clr-light-gray);
-    background-color: rgb(15, 15, 15);
+    border-bottom: 2px solid var(--clr-dark-gray);
+    border-right: 2px solid var(--clr-dark-gray);
+    background-color: rgba(0,0,0,0.4);
 }
+.exercise-tags-wrapper{
+    display: flex;
+    justify-content: space-between;  
+}
+
+.exercise-tags:not(:first-of-type){
+    margin: 0 1rem;
+}
+.exercise-tags:first-of-type,
+.project-tags:first-of-type{
+    margin:0rem 1rem 0 0;
+    animation-delay: 0.25s;
+}
+.exercise-tags:nth-child(2),
+.project-tags:nth-child(2){
+    margin:0rem 1rem 0 0;
+    animation-delay: 0.5s;
+}
+.exercise-tags:nth-child(3),
+.project-tags:nth-child(3){
+    margin:0rem 1rem 0 0;
+    animation-delay: 0.75s;
+}
+.exercise-tags:nth-child(4),
+.project-tags:nth-child(4){
+    margin:0rem 1rem 0 0;
+    animation-delay: 1s;
+}
+.project-tags{
+    display: block;
+    font-size:1.25rem;
+    margin:1rem 0  !important;
+    /* background-color: red; */
+    animation: color-change  1.5s infinite;
+}
+.exercise-tags{
+    font-size:1.25rem;
+    animation: color-change  1s infinite;
+}
+@keyframes color-change {
+    0% { color: var(--clr-yellow); }
+    50% { color: var(--clr-light-gray); }
+    100% { color: var(--clr-yellow); }
+  }
 
 .rotated-90{
     position: relative;
@@ -230,6 +278,9 @@ p{
     .content-wrapper{
         max-width:90%;
     }
+    .content{
+        padding:3rem 1rem;
+    }
     .nav-wrapper{
         padding: 0 0.5rem;
     }
@@ -251,4 +302,50 @@ p{
     .nav-wrapper{
         max-width:55%;
     }
+}
+
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: smooth !important;
+  }
+}
+body::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 4px black;
+  border-radius: 10px;
+  background-color: rgb(40, 40, 40);
+}
+
+body::-webkit-scrollbar{
+  width: 12px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px black;
+  background-color: var(--clr-yellow);
+}
+body::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(209,175,75); 
+}
+
+
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-track{
+    filter: grayscale(100%);
 }
