@@ -68,10 +68,10 @@ picture {
     --ff-para-reg:"Helvetica_Neue_TPro_Regular",sans-serif;
           /* font-sizes */
 
-          --fs-500: clamp(2.5rem,10vw,3rem);
-          --fs-400: 2rem;
+          --fs-500: clamp(2.5rem,6vw,3rem);
+          --fs-400: clamp(1rem,6vw,2rem);
           --fs-350:1.5rem;
-          --fs-300: 1.25rem;
+          --fs-300: clamp(1rem, 6vw,1.25rem);
           --fs-200: 0.875rem;
    
 }
@@ -111,13 +111,13 @@ h2{
     text-transform: uppercase;
 }
 .font-wrapper>*{
-    margin-top: 10px;
+    margin-top: 20px;
 }
 nav{
    padding:0.25rem 0;
    /* border-bottom: 1px solid var(--clr-light-gray); */
    /* border-top: 3px solid var(--clr-light-gray); */
-   /* background-color: rgb(252, 252, 252); */
+   background-color: rgba(252, 252, 252,0.6);
    position: fixed;
    width: 100%;
    top: 0;
@@ -214,25 +214,36 @@ p{
 .title-weight{
     font-weight: 800;
 }
+.rm-wrapper{
+    min-width:clamp(3rem,6vw,12rem);
+
+    padding: 0 0.25rem;
+    background-color: rgba(252,252,252,0.3);
+    border: 1px solid white;
+}
+.rm-wrapper img{
+    object-fit: contain;
+}
 img{
     width:100%;
 }
 
 .content-wrapper{
-    margin: 3rem auto;
+    margin:  clamp(1rem,6vw,3rem) auto;
     padding:5rem 1rem;
     background-color:rgb(240, 240, 240);
     width: 100%;
 }
-.content{
-    margin:clamp(4rem,10vw,9rem) 1rem;
-    padding:3rem 2rem;
-    /* border-left:1px solid black;
-    border-right:1px solid black; */
-    /* height:50rem; */
 
-    background-color: rgba(0,0,0,0.4);
+.moodboard-section{
+    background-color: rgba(255, 255, 255,0.3);
+    padding:2rem 2rem;
+    margin: 2rem -1rem;
 }
+.assets-parent {
+    gap:1rem;
+}
+
 .mobile-section,
 .style-guide-section{
     background-color:  var(--clr-twitter-blue);
@@ -256,24 +267,36 @@ img{
     .content-wrapper{
         max-width:92%;
     }
-    .content{
-        padding:3rem 1rem;
-    }
     .nav-wrapper{
         padding: 0 0.5rem;
     }
+    .tablet-section figure,
+.desktop-section figure{
+    width:100%;
+    margin:2rem 0;
+}
 }
 @media (min-width:35em){
     .content-wrapper,
     .nav-wrapper{
         max-width:85%;
     }
+    .tablet-section figure,
+.desktop-section figure{
+    width:100%;
+    margin:2rem 0;
+}
 }
 @media (min-width:45em){
     .content-wrapper,
     .nav-wrapper{
         max-width:80%;
     }
+    .tablet-section figure,
+.desktop-section figure{
+    width:100%;
+    margin:2rem 0;
+}
 }
 @media (min-width:50em){
     .content-wrapper,
