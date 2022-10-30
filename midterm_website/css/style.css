@@ -46,6 +46,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p,
 figure,
 picture {
@@ -67,9 +68,10 @@ picture {
     --ff-para-reg:"Helvetica_Neue_TPro_Regular",sans-serif;
           /* font-sizes */
 
-          --fs-500: 2.5rem;
-          --fs-400: 1.25rem;
-          --fs-300: 1rem;
+          --fs-500: clamp(2.5rem,10vw,3rem);
+          --fs-400: 2rem;
+          --fs-350:1.5rem;
+          --fs-300: 1.25rem;
           --fs-200: 0.875rem;
    
 }
@@ -87,9 +89,10 @@ picture {
 .text-white{color:white;}
 .text-black{color: black;}
 
-.fs-900,.fs-800,.fs-700,.fs-600 {line-height: 1.1;}
+.fs-900,.fs-800,.fs-700,.fs-600 {line-height:1.1;}
 
 .fs-300{font-size: var(--fs-300);}
+.fs-350{font-size: var(--fs-350);}
 .fs-400{font-size: var(--fs-400);}
 .fs-500{font-size: var(--fs-500);}
 main{
@@ -100,6 +103,15 @@ main{
 h1{
     font-size:clamp(3rem,10vw,6rem);
     text-align: center;
+    text-transform: uppercase;
+}
+h2{
+    font-size:clamp(3rem,10vw,5rem);
+    text-align: center;
+    text-transform: uppercase;
+}
+.font-wrapper>*{
+    margin-top: 10px;
 }
 nav{
    padding:0.25rem 0;
@@ -171,7 +183,6 @@ nav a:last-child{
 
 main{
     padding:2rem 0;
-
 }
 p{
     margin: 0.5rem 0;
@@ -193,14 +204,23 @@ p{
     width:90%;
     margin:2rem 0;
 }
-
+.style-guide-section figure{
+   width:100%;
+    margin:2rem 0;
+}
+.style-guide-section span{
+    display: block;
+}
+.title-weight{
+    font-weight: 800;
+}
 img{
     width:100%;
 }
 
 .content-wrapper{
     margin: 3rem auto;
-    padding: 1rem;
+    padding:5rem 1rem;
     background-color:rgb(240, 240, 240);
     width: 100%;
 }
@@ -213,14 +233,15 @@ img{
 
     background-color: rgba(0,0,0,0.4);
 }
-.mobile-section{
+.mobile-section,
+.style-guide-section{
     background-color:  var(--clr-twitter-blue);
 }
 
 .desktop-section{
     background-color:  rgb(5, 5, 5);
 }
-
+.style-guide-section .line,
 .mobile-section .line,
 .desktop-section .line{
     margin: 1rem 0;
@@ -268,9 +289,11 @@ img{
     }
 }
 
-
 .flex{
     display: flex;
+}
+.text-right{
+    text-align: right;
 }
 
 /* make form elements easier to work with */
