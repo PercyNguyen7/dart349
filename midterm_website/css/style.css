@@ -242,7 +242,9 @@ nav a:hover::before {
 main {
     padding: 2rem 0;
 }
-
+span{
+    margin-top: 1rem;
+}
 p {
     margin: 0.5rem 0;
     font-weight: 50;
