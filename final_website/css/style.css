@@ -6,22 +6,18 @@
     font-family: "Fog";
     src: url(../assets/fonts/FoglihtenNo07.otf) format('opentype');
 }
-
 @font-face {
     font-family: "GT_America_Bold";
     src: url(../assets/fonts/GT_America_Bold.otf) format('opentype');
 }
-
 @font-face {
     font-family: "GT_America_Regular";
     src: url(../assets/fonts/GT_America_Regular.otf) format('opentype');
 }
-
 @font-face {
     font-family: "Helvetica_Neue_TPro_Regular";
     src: url(../assets/fonts/HelveticaNeueLTPro-55Roman.otf) format('opentype');
 }
-
 @font-face {
     font-family: "Helvetica_Neue_TPro_Bold";
     src: url(../assets/fonts/HelveticaNeueLTPro-75Bold.otf) format('opentype');
@@ -71,10 +67,10 @@ picture {
     --ff-para-bold: "Helvetica_Neue_TPro_Bold", sans-serif;
     --ff-para-reg: "Helvetica_Neue_TPro_Regular", sans-serif;
     /* font-sizes */
-    --fs-700:clamp(2.5rem, 6vw,8rem);
-    --fs-600:4rem;
+    --fs-700:clamp(4rem, 6vw,7rem);
+    --fs-600:clamp(3rem,20vw, 4rem);
     --fs-500: clamp(2.5rem, 6vw, 3rem);
-    --fs-400: clamp(1rem, 6vw, 2rem);
+    --fs-400: clamp(1.5rem, 6vw, 2rem);
     --fs-350: 1.5rem;
     --fs-300: clamp(1rem, 6vw, 1.25rem);
     --fs-200: 0.875rem;
@@ -93,6 +89,7 @@ picture {
 .text-twitter-blue {color: var(--clr-twitter-blue)}
 .text-white {color: white;}
 .text-black {color: black;}
+.text-blue {color: var(--clr-twitter-blue)}
 
 .fs-900,
 .fs-800,
@@ -125,11 +122,96 @@ h2 {
     font-size: clamp(3rem, 10vw, 5rem);
     text-transform: uppercase;
 } */
+.click-instruction{
+    position: absolute;
+    bottom:2rem;
+    right:2rem;
+}
+.welcome{
+    padding-inline: clamp(3rem,40vw,6rem); 
+    background-color: var(--clr-twitter-blue);
+    overflow: hidden;
+    min-height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-revenue{
+    background: url(../assets/images/revenue-spam.png) center center;
+}
+
+.welcome-msg-wrapper
+.rm-bar{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.welcome-msg-wrapper{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.flex-row{
+    flex-direction: row;
+}
+
+
+.rm-black-bar{
+position: relative;
+width: 2rem;
+height:80vh;
+background-color: black;
+border: 2px solid white;
+border-radius: 1rem;
+}
+.rm-blue-bar{
+    position: absolute;
+    left:-2px;
+    bottom: -2px;
+    width: 2rem;
+    height:30vh;
+    background-color: var(--clr-twitter-blue);
+    border: 4px solid white;
+    border-radius: 1rem;
+    animation: 4s ease-in-out 0s infinite alternate fluctuate-rm;
+    }
+    @keyframes fluctuate-rm {
+        from {
+          /* pushes the sun down past the viewport */
+          height:20vh;
+        }
+        to {
+          /* returns the sun to its default position */
+          height:60vh;
+        }
+      }
+.bg-revenue>.welcome-msg-wrapper,
+.bg-revenue>.click-instruction{
+    background-color: rgba(29, 155, 240,1);
+    padding:1rem;
+    border:2px solid white;
+}
+
+.revenue-spam{
+    position: absolute;
+    z-index: 100;
+}
+
+
+.welcome-msg-wrapper>.twitter-logo-big{
+    margin: 4rem auto 0;
+}
+/*                  DAY OPENING             */
+/*                  DAY OPENING             */
 .daily-info{
     background-color: var(--clr-twitter-blue);
     min-height: 100vh;
     color: white;
-    /* font-weight: 100 ; */
     grid-template-areas: ". day     logo . "
                          ". revenue logo . ";
                         
@@ -138,11 +220,11 @@ h2 {
     grid-template-rows: 1fr 1fr 5rem;
     /* justify-items: center; */
     align-content:center;
-    padding-inline: 20rem;                  
+    padding-inline: clamp(3rem,40vw,6rem);                  
 }
 .day-info-wrapper{
     grid-area: day;
-    align-self: start;
+    align-self: end;
 }
 .revenue-info-wrapper{
     grid-area: revenue;
@@ -150,99 +232,249 @@ h2 {
 }
 .twitter-logo-big{
     background: url('../assets/icons/logo-white.svg') center center no-repeat;
-    width:clamp(10rem,1rem + 45vw,35rem);
+    width:clamp(5rem,1rem + 35vw,35rem);
     aspect-ratio: 1;
     grid-area: logo;
-    align-self: end;
-
+    align-self: center;
 }
-.font-wrapper>* {
-    margin-top: clamp(5px, 5vw, 20px);
+.daily-info>.twitter-logo-big{
+    position: relative;
+    top:clamp(2rem,35vw,5rem);
 }
 
-nav {
-    padding: 0.25rem 0;
-    /* border-bottom: 1px solid var(--clr-light-gray); */
-    /* border-top: 3px solid var(--clr-light-gray); */
-    background-color: rgba(252, 252, 252, 0.6);
-    position: fixed;
+/*                  DAY SUGGESTION             */
+/*                  DAY SUGGESTION             */
+.daily-suggestion-wrapper{
+    background-color: var(--clr-twitter-blue);
+    min-height: 100vh;
+    grid-template-areas: ". text text  ."
+                         ". interest tweet1 . "
+                         ". interest tweet2 . "
+                         ". interest tweet3 . ";
+                        
+    grid-template-columns: minmax(1rem, 1fr) minmax(0,20rem) minmax(0,56rem) minmax(1rem, 1fr);
+    gap:clamp(1rem,35vw,3rem);
+    /* justify-items: center; */
+    align-content:center;
+    padding-inline: clamp(3rem,40vw,6rem);  
+    padding: clamp(2rem,30vw,4rem) 0;                
+}
+.twitter-interface-wrapper{
+    min-height: 100vh;
+    grid-template-areas: "nav-left main suggestion-right"
+                         "nav-left main suggestion-right "
+                         "nav-left main suggestion-right "
+                         "nav-left main suggestion-right ";
+                        
+    grid-template-columns: minmax(5rem, 30vw) minmax(30rem,50rem) minmax(20rem, 1fr);
+    /* justify-items: center;
+    align-content:center; */
+    /* padding: clamp(2rem,30vw,4rem) 0;                 */
+}
+
+.home-icon{background: url('../assets/icons/twitter-home.svg') center center no-repeat;}
+.home-icon-active{background: url('../assets/icons/twitter-home-night.svg') center center no-repeat;}
+.profile-icon{background: url('../assets/icons/twitter-profile.svg') center center no-repeat;}
+.profile-icon-active{background: url('../assets/icons/twitter-profile-night.svg') center center no-repeat;}
+.data-icon{background: url('../assets/icons/twitter-data.svg') center center no-repeat;}
+.data-icon-active{background: url('../assets/icons/twitter-data-night.svg') center center no-repeat;}
+.activity-icon{background: url('../assets/icons/twitter-notification.svg') center center no-repeat;}
+.activity-icon-active{background: url('../assets/icons/twitter-notification-night.svg') center center no-repeat;}
+.icons-nav{
+    width: 1.7rem;
+    aspect-ratio: 1;
+    background-size:1.7rem;
+    /* background-color: blue; */
+}
+.nav{
+    position: sticky;
+    grid-area:nav-left;
+    top:0;
+    left:0;
+    /* background-color: rgb(243, 243, 243); */
+    /* width: 30vw;
+    min-width: 16rem; */
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100vh;
+    /* border-right: 1px solid rgb(233, 233, 233); */
+}
+
+.nav a{
+    color: black;
+    text-decoration: none;
+}
+.nav span,p{
+    display: block;
+    font-weight: 100;
+    /* width: min-content; */
+}
+
+.nav-top,
+.nav-bottom{
+    width: 15rem;
+}
+.nav-top>*:not(:first-child){
+    margin-bottom: clamp(1rem,10vw,2rem);
+}
+.nav-top>*:first-child{
+    margin-bottom: 3rem;
+}
+.nav-top{
+    /* background-color: rgb(219, 219, 219); */
+}
+.nav-bottom>*{
+    margin-bottom: 1rem;
+}
+.nav-bottom{
+    /* background-color: rgb(155, 155, 155); */
+}
+.main-area{
+    grid-area: main;
     width: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+    border-left: 1px solid rgb(233, 233, 233);
+    border-right: 1px solid rgb(233, 233, 233);
+    padding:1rem;
 }
 
-@supports (backdrop-filter: blur(1rem)) {
+.suggestion-aside{
+    grid-area: suggestion-right;
+    position: sticky;
+    top:0;
+    height:105vh;
+    /* width: 30vw;
+    min-width: 16rem; */
+    padding: 1rem;  
+}
+
+.news-aside{
+    background-color: rgb(119, 119, 119);
+    height: 15rem;
+}
+
+.follow-aside{
+    background-color: rgb(199, 199, 199);
+    height:35rem;
+}
+.sleep-button{
+    background-color: var(--clr-twitter-blue);
+    border-radius: 40px;
+    text-align: center;
+    padding: 1rem 0.5rem;
+}
+.tabs-names,
+.algo-info{
+
+    white-space: nowrap;
+}
+.tabs-wrapper{
+    /* justify-content: center; */
+    align-items: center;
+    gap:1rem;
+}
+
+.nav-left{
+    grid-area:nav;
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color: red;
+}
+.trevor-name{
+    flex-direction: column;
+}
+
+.suggestion-instructions{
+    color: white;
+    grid-area: text;
+    text-align: center;
+}
+.interest-info>*{
+    margin-bottom: 1rem;
+}
+.trevor-info-top{
+    justify-content: start;
+    align-items: center;
+    gap:0.5rem;
+}
+.trevor-pfp{
+    width:2.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.interest-info{
+    grid-area:interest;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 1rem 3rem;
+    border-radius: 20px;
+    height: min-content;
+    /* border: 1px solid black; */
+}
+.interest-info span{
+    display: block;
+}
+
+
+.tweets-choice-1,
+.tweets-choice-2,
+.tweets-choice-3{
+}
+.tweet-areas{
+    width: clamp(15rem,35vw,35rem);
+    /* min-width: 15rem; */
+    background-color: rgba(0,0,0,0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+    border-radius: 20px;
+}
+.tweets-choice-1{
+    grid-area: tweet1;
+}
+.tweets-choice-2{
+    grid-area: tweet2;
+}
+.tweets-choice-3{
+    grid-area: tweet3;
+}
+.recommend-button{
+    background-color: white;
+    border: 2px solid white;
+    width: min-content;
+    padding: 0.5rem 5rem;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    transition: all 200ms ease-in-out;
+}
+.recommend-button>span{
+    color: var(--clr-twitter-blue);
+    
+}
+.recommend-button:hover{
+    background-color:var(--clr-twitter-blue);
+    border: 2px solid (--clr-twitter-blue);
+}
+
+.recommend-button:hover span{
+    color: white;
+   
+}
+
+/* @supports (backdrop-filter: blur(1rem)) {
     nav {
         background-color: rgba(255, 255, 255, 0.75);
         backdrop-filter: blur(0.6rem);
     }
-}
+} */
 
-nav a {
-    text-decoration: none;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    /* background-color: black; */
-    /* border:1px solid var(--clr-dark-gray); */
-    /* box-shadow: 0 0 10px 1px var(--clr-light-gray); */
-    transition: all 400ms;
-}
 
-nav a:first-child {
-    padding: 0.5rem 0rem;
-}
-
-nav a:nth-child(2) {
-    padding: 0.5rem 0rem;
-    text-align: center;
-}
-
-nav a:last-child {
-    padding: 0.5rem 0rem;
-    text-align: right;
-}
-
-nav a::before,
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    left: 0;
-    padding: 0;
-}
-
-nav a::before {
-    background-color: black;
-    height: 2px;
-    bottom: 2px;
-    transform-origin: 100% 50%;
-    transform: scaleX(0);
-    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-nav a:hover::before {
-    transform-origin: 0% 50%;
-    transform: scaleX(1);
-}
-
-.nav-wrapper {
-    /* background-color: red; */
-    /* padding: 0 1rem; */
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-main {
-    padding: 2rem 0;
-}
-span{
-    margin-top: 1rem;
-}
 p {
-    margin: 0.5rem 0;
     font-weight: 50;
 }
 
@@ -251,27 +483,6 @@ p {
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-.mobile-section figure {
-    width: 45%;
-    margin: 1rem 0;
-}
-
-.tablet-section figure,
-.desktop-section figure,
-.style-guide-section figure {
-    width: 100%;
-    margin: clamp(0.5rem,5vw,2rem) 0;
-}
-
-
-.style-guide-section span {
-    display: block;
-}
-
-.title-weight {
-    font-weight: 800;
 }
 
 .rm-wrapper {
@@ -291,47 +502,12 @@ img {
 }
 
 .content-wrapper {
-    margin: clamp(1rem, 6vw, 3rem) auto;
-    padding: 5rem 1rem;
-    background-color: rgb(240, 240, 240);
-    width: 100%;
+    max-width: 78rem;
 }
 
-.moodboard-section {
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 2rem 1rem;
-    margin: 2rem -1rem;
-}
 
-.assets-parent {
-    gap: 1rem;
-}
-
-.mobile-section,
-.style-guide-section {
-    background-color: var(--clr-twitter-blue);
-}
-
-.desktop-section {
-    background-color: rgb(5, 5, 5);
-}
-
-.style-guide-section .line,
-.mobile-section .line,
-.desktop-section .line {
-    margin: 1rem 0;
-    border-bottom: 1px solid white;
-}
-
-.tablet-section .line {
-    margin: 1rem 0;
-    border-bottom: 1px solid black;
-}
 
 @media (max-width:34.99em) {
-    .content-wrapper {
-        max-width: 92%;
-    }
 
     .nav-wrapper {
         padding: 0 0.5rem;
@@ -340,39 +516,30 @@ img {
 
 @media (min-width:35em) {
 
-    .content-wrapper,
+    /* .content-wrapper,
     .nav-wrapper {
         max-width: 85%;
-    }
+    } */
 }
 
 @media (min-width:45em) {
 
-    .content-wrapper,
-    .nav-wrapper {
-        max-width: 80%;
-    }
+
 }
 
 @media (min-width:50em) {
 
-    .content-wrapper,
-    .nav-wrapper {
-        max-width: 75%;
-    }
+  
 }
 
 @media (min-width:55em) {
 
-    .content-wrapper,
-    .nav-wrapper {
-        width: 65%;
-        max-width: 70rem;
-    }
+    
 }
 
 .flex {display: flex;}
 .grid {display: grid;}
+.hidden {display:none;}
 
 .text-right {
     text-align: right;
@@ -398,7 +565,7 @@ select {
         scroll-behavior: smooth !important;
     }
 }
-
+/* 
 body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 4px black;
     border-radius: 10px;
@@ -424,4 +591,45 @@ body::-webkit-scrollbar-thumb:hover {
 body::-webkit-scrollbar,
 body::-webkit-scrollbar-track {
     filter: grayscale(100%);
+} */
+.no-display{
+    display:none;
+}
+.focus-in-expand {
+	        animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.focus-in-expand-500{
+    animation: focus-in-expand 0.8s 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.focus-in-expand-1000{
+    animation: focus-in-expand 0.8s 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.focus-in-expand-1500{
+    animation: focus-in-expand 0.8s 1500ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2022-11-10 2:41:52
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation focus-in-expand
+ * ----------------------------------------
+ */
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
 }
