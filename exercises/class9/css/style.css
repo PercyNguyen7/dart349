@@ -62,7 +62,7 @@ picture {
     --clr-yellow: rgb(224, 178, 86);
     --clr-black: rgb(0, 0, 0);
     --clr-dark-gray: rgb(32, 32, 32);
-    --clr-light-gray: rgb(168, 168, 168);
+    --clr-light-gray: rgb(215, 215, 215);
     --clr-twitter-blue: rgba(29, 155, 240);
     /* --ff-serif: "Fog",serif;
     --ff-sans: "Barlow Condensed", sans-serif; */
@@ -390,34 +390,16 @@ border-radius: 1rem;
     margin: 0 auto;
 }
 .profile-intro{
-    padding: 0rem 2rem;
-    border-bottom: 1px solid rgb(233, 233, 233);
+    padding: 0 1rem;
 }
 .profile-bg{
     background-color: rgb(233,233,233);
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
     height:10rem;
-}
-.profile-pic{
-    background-color: rgb(0, 0, 0);
-    position: relative;
 
-    bottom: clamp(1rem,40vw,4rem);
-    width: clamp(2rem,40vw,8rem);
-    height:clamp(2rem,40vw,8rem);
-    border-radius: 50%;
 }
-.profile-info-bottom{
-    position: relative;
-    bottom: 2rem;
-}
-.profile-info-wrapper{
-    gap:4rem;
-}
-.profile-day-join{
-    margin-top:1rem;
-}
+
 
 .suggestion-aside,
 .rm-bar,
