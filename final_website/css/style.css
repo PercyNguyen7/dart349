@@ -150,7 +150,10 @@ h2 {
     align-items: center;
     justify-content: center;
 }
-
+.mission-msg p,
+.welcome-msg-wrapper p{
+    margin: 1rem;
+}
 .bg-revenue{
     background: url(../assets/images/revenue-spam.png) center center;
 }
@@ -181,6 +184,17 @@ height:80vh;
 background-color: black;
 border: 2px solid white;
 border-radius: 1rem;
+}
+
+.rm-black-bar span {
+    display:none;
+
+}
+.rm-black-bar:hover span {
+    display:block;
+    position:fixed;
+    overflow:hidden;
+    z-index: 9999 !important;
 }
 .rm-blue-bar{
     position: absolute;
@@ -363,12 +377,15 @@ border-radius: 1rem;
 }
 
 #home-page[data-visible="true"],
-#profile-page[data-visible="true"]{
+#profile-page[data-visible="true"],
+#data-page[data-visible="true"]
+{
     display: block;
 }
 .welcome-slides[data-slide-active='false'],
 #home-page[data-visible="false"],
-#profile-page[data-visible="false"]{
+#profile-page[data-visible="false"],
+#data-page[data-visible="false"]{
     display: none;
 }
 .welcome-slides[data-slide-active='true']{
@@ -378,12 +395,13 @@ border-radius: 1rem;
     grid-area: main;
     width: 100%;
 }
-.home-header{
-    padding: 1rem;
+.home-header,
+.data-header{
+    padding:2rem 1rem;
+    border-bottom: 1px solid rgb(233, 233, 233);
 }
 .home-tweet-wrapper{
     padding:2rem 1rem;
-    border-top: 1px solid rgb(233, 233, 233);
 }
 .home-tweet-wrapper:hover{
     background-color: rgba(247,247,247,255);
@@ -428,15 +446,25 @@ border-radius: 1rem;
     margin-top:1rem;
 }
 .profile-tweet{
-    padding: 2rem;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgb(233, 233, 233);
 }
 .profile-tweet-pfp{
     background:url('../assets/images/trevor/LennyFace.png') center center  no-repeat;
     background-size: cover;
-    width: clamp(2rem,40vw,4rem);
+    min-width: clamp(2rem,40vw,4rem);
     height:clamp(2rem,40vw,4rem);
     border:2px solid black;
     border-radius: 50%;
+}
+.profile-tweet-text{
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.data-area{
+    padding:2rem;
 }
 .suggestion-aside,
 .rm-bar,
@@ -616,7 +644,6 @@ p {
 
 .rm-wrapper {
     min-width: clamp(2rem, 6vw, 12rem);
-
     padding: 0 0.25rem;
     background-color: rgba(252, 252, 252, 0.3);
     border: 1px solid white;

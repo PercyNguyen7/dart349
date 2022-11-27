@@ -109,9 +109,9 @@
 
 
 
-                <!-- TWTITER INTERFACE                                                  -->
-                <!-- TWTITER INTERFACE                                                  -->
-  <section class="twitter-interface-wrapper grid">
+    <!-- TWTITER INTERFACE                                                  -->
+    <!-- TWTITER INTERFACE                                                  -->
+    <section class="twitter-interface-wrapper grid">
         <nav class="nav flex">
             <div class="nav-top">
                 <span class="ff-title-bold fs-400">The Racist Algorithm</span>
@@ -171,8 +171,8 @@
             <div class="home-header">
                 <h2 class="ff-para-reg fs-300">Trevor's Home</h2>
                 <p class="ff-para-reg fs-200">Current User Feed</p>
-
             </div>
+
             <div class="home-tweet-wrapper">
                 <div class="home-tweet">
                     <blockquote class="twitter-tweet">
@@ -271,9 +271,7 @@
 
         </div>
 
-        <div id="profile-page" data-visible="true" class="main-area pages">
-
-
+        <div id="profile-page" data-visible="false" class="main-area pages">
             <div class="profile-intro">
                 <div class="profile-bg"></div>
                 <div class="profile-pic"></div>
@@ -281,46 +279,85 @@
                 <div class="profile-info-bottom">
                     <div class="fs-300 ff-para-bold">Trevor</div>
                     <div class="fs-200 ff-para-reg text-light-gray">@trevorlifematters</div>
-                  
-                        <div class="fs-200 ff-para-reg text-light-gray profile-day-join">Joined 5 Days Ago</div>
 
-                        <div class="profile-info-wrapper flex">
-                            <div class="fs-200 ff-para-reg text-light-gray"><span class="text-black ff-para-bold">2
-                                </span> Following</div>
-                            <div class="fs-200 ff-para-reg text-light-gray"><span class="text-black ff-para-bold">2
-                                </span>Followers</div>
-                            </div>
+                    <div class="fs-200 ff-para-reg text-light-gray profile-day-join">Joined 5 Days Ago</div>
+
+                    <div class="profile-info-wrapper flex">
+                        <div class="fs-200 ff-para-reg text-light-gray"><span class="text-black ff-para-bold">2
+                            </span> Following</div>
+                        <div class="fs-200 ff-para-reg text-light-gray"><span class="text-black ff-para-bold">2
+                            </span>Followers</div>
+                    </div>
                 </div>
             </div>
 
             <div class="profile-tweet flex">
                 <div class="profile-tweet-pfp"></div>
-              <div>
-                <div>
-                <span class="text-black ff-para-bold">Trevor</span>
-                <span class="ff-para-reg text-light-gray">@trevorlifematters</span>
-                <span class="ff-para-reg text-light-gray">Nov 1</span>
-                </div>
-                <div>
-                    <span class="text-black ff-para-bold">Trevor</span>
-
+                
+                <div  class="profile-tweet-text flex">
+                    <div>
+                        <span class="text-black ff-para-bold">Trevor</span>
+                        <span class="ff-para-reg text-light-gray">@trevorlifematters</span>
+                        <span class="ff-para-reg text-light-gray">Nov 1</span>
+                    </div>
+                    <div>
+                        <span class="text-black ff-para-reg">A guy asks a Chinese lady for her phone number she says, "Free, sex, free, sex, tonight." The guy said," wow" and her friend says she means 363629.</span>
+                    </div>
                 </div>
             </div>
-            </div>
 
+            <div class="profile-tweet flex">
+                <div class="profile-tweet-pfp"></div>
+                
+                <div  class="profile-tweet-text flex">
+                    <div>
+                        <span class="text-black ff-para-bold">Trevor</span>
+                        <span class="ff-para-reg text-light-gray">@trevorlifematters</span>
+                        <span class="ff-para-reg text-light-gray">Nov 1</span>
+                    </div>
+                    <div>
+                        <span class="text-black ff-para-reg">A guy asks a Chinese lady for her phone number she says, "Free, sex, free, sex, tonight." The guy said," wow" and her friend says she means 363629.</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div data-visible="false" class="main-area pages"></div>
-        <div data-visible="false" class="main-area pages"></div>
+<!-- DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE -->
 
-        <div [data-interface='true'] class="rm-bar flex">
-            <p class="ff-para-bold fs-300 text-black">RM</p>
-            <div class="rm-black-bar">
-                <div class="rm-blue-bar"></div>
+        <div id="data-page" data-visible="true" class="main-area pages">
+
+            <div class="data-header">
+                <h2 class="ff-para-reg fs-300">Trevor's Personal Data</h2>
+                <p class="ff-para-reg fs-200">User Info</p>
+            </div>  
+
+            <div class="data-area">
+                <div class="data-user-personal">
+                <p class="ff-para-reg fs-200"> <strong>Full Name:</strong> Trevor Adams</p>
+                <p class="ff-para-reg fs-200"> <strong>Date of birth:</strong>December 24 1990</p>
+                <p class="ff-para-reg fs-200"> <strong>Phone Number:</strong> (488) 000 1488 </p>
+                <p class="ff-para-reg fs-200"> <strong>Email:</strong>trevorFirst@gmail.com</p>
+
+                <p class="ff-para-reg fs-200"> <strong>Country:</strong> Trevor Adams</p>
             </div>
-        </div>
+            <div class="data-user-interest">
+                <span class="ff-para-bold fs-200">Dank and Racial Memes</span>
+                <span class="ff-para-reg fs-200">Political Figure</span>
+                <span class="ff-para-reg fs-200">Donald Trump</span>
+                <span class="ff-para-reg fs-200">Pro Gun</span>
+                <!-- <span class="ff-para-reg fs-200">Interests</span> -->
 
 
+            </div>
+
+
+
+            </div>
+        </div>  
+
+<!-- DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE DATA PAGE -->
+
+<!-- SUGGESTION ASIDE SUGGESTION ASIDE SUGGESTION ASIDE SUGGESTION ASIDE SUGGESTION ASIDE SUGGESTION ASIDE SUGGESTION ASIDE SUGGESTION ASIDE -->
         <aside class="suggestion-aside">
 
             <div class="news-aside">
@@ -338,7 +375,18 @@
             </div>
 
         </aside>
-    </section> 
+
+        <div data-visible="false" class="main-area pages"></div>
+        <div data-visible="false" class="main-area pages"></div>
+
+        <div data-interface='true' class="rm-bar flex">
+            <p class="ff-para-bold fs-300 text-black">RM</p>
+            <div class="rm-black-bar">
+                <div class="rm-blue-bar"></div>
+                <span class="ff-para-bold fs-300 text-black">Revenue Meter</span>
+            </div>
+        </div>
+    </section>
 
     <script src="./js/experience.js"></script>
 </body>

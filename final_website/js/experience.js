@@ -38,6 +38,7 @@ profileTab.addEventListener('click', () => {
 dataTab.addEventListener('click', () => {
     hidePages();
     dataTab.setAttribute("data-tab-active", true);
+    dataPage.setAttribute("data-visible",true);
 });
 
 activityTab.addEventListener('click', () => {
@@ -56,3 +57,14 @@ function hidePages(){
     // dataPage.setAttribute("data-visible",false);
     // activityPage.setAttribute("data-visible",false);
 }
+
+var tooltips = document.querySelectorAll('.rm-black-bar span');
+
+window.onmousemove = function (e) {
+    var x = (e.clientX + 20) + 'px',
+        y = (e.clientY + 20) + 'px';
+    for (var i = 0; i < tooltips.length; i++) {
+        tooltips[i].style.top = y;
+        tooltips[i].style.left = x;
+    }
+};
