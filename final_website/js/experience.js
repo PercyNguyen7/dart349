@@ -131,6 +131,7 @@ dataTab.addEventListener('click', () => {
 activityTab.addEventListener('click', () => {
     hidePages();
     activityTab.setAttribute("data-tab-active", true);
+    activityPage.setAttribute("data-visible",true);
 });
 
 function hidePages() {

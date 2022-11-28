@@ -234,10 +234,10 @@ border-radius: 1rem;
     border:2px solid white;
 }
 
-.revenue-spam{
+/* .revenue-spam{
     position: absolute;
     z-index: 100;
-}
+} */
 
 
 .welcome-msg-wrapper>.twitter-logo-big{
@@ -410,6 +410,7 @@ border-radius: 1rem;
 .welcome-slides[data-slide-active='false'],
 #home-page[data-visible="false"],
 #profile-page[data-visible="false"],
+#activity-page[data-visible="false"],
 #data-page[data-visible="false"]{
     display: none;
 }
