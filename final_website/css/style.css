@@ -138,11 +138,15 @@ h2 {
 .tabs {
     font-family: serif;
 }
-
+.background-img{
+    background: url(../assets/images/twitter-bg.png) center center ;
+    background-size: cover;
+}
 .welcome{
-
     padding-inline: clamp(3rem,40vw,6rem); 
-    background-color: var(--clr-twitter-blue);
+    /* background-color: var(--clr-twitter-blue); */
+    background: url(../assets/images/twitter-bg.png) center center ;
+    background-size: cover;
     overflow: hidden;
     min-height: 100vh;
     width: 100%;
@@ -155,7 +159,7 @@ h2 {
     margin: 1rem;
 }
 .bg-revenue{
-    background: url(../assets/images/revenue-spam.png) center center;
+    background: url(../assets/images/twitter-bg.png) center center;
 }
 .rm-bar{
     position: sticky;
@@ -196,7 +200,8 @@ border-radius: 1rem;
     overflow:hidden;
     z-index: 9999 !important;
 }
-.rm-blue-bar{
+.rm-blue-bar,
+.rm-blue-bar-game{
     position: absolute;
     left:-2px;
     bottom: -2px;
@@ -205,8 +210,13 @@ border-radius: 1rem;
     background-color: var(--clr-twitter-blue);
     border: 4px solid white;
     border-radius: 1rem;
-    animation: 4s ease-in-out 0s infinite alternate fluctuate-rm;
     }
+
+.rm-blue-bar{
+    animation: 4s ease-in-out 0s infinite alternate fluctuate-rm;
+}
+
+
     @keyframes fluctuate-rm {
         from {
           /* pushes the sun down past the viewport */
@@ -235,8 +245,8 @@ border-radius: 1rem;
 }
 /*                  DAY OPENING             */
 /*                  DAY OPENING             */
-.daily-info{
-    background-color: var(--clr-twitter-blue);
+.daily-info-section{
+    /* background-color: var(--clr-twitter-blue); */
     min-height: 100vh;
     color: white;
     grid-template-areas: ". day     logo . "
@@ -263,29 +273,29 @@ border-radius: 1rem;
     grid-area: logo;
     align-self: center;
 }
-.daily-info>.twitter-logo-big{
+.daily-info-section>.twitter-logo-big{
     position: relative;
     top:clamp(2rem,35vw,5rem);
 }
 
 /*                  DAY SUGGESTION             */
 /*                  DAY SUGGESTION             */
-.daily-suggestion-wrapper{
-    background-color: var(--clr-twitter-blue);
+.daily-suggestion-section{
+    /* background-color: var(--clr-twitter-blue); */
     min-height: 100vh;
-    grid-template-areas: ". text text  ."
-                         ". interest tweet1 . "
-                         ". interest tweet2 . "
-                         ". interest tweet3 . ";
+    grid-template-areas: ". text text ."
+                         ". tweet1 tweet2."
+                         ". tweet1 tweet2."
+                         ". tweet1 tweet2.";
                         
-    grid-template-columns: minmax(1rem, 1fr) minmax(0,20rem) minmax(0,56rem) minmax(1rem, 1fr);
-    gap:clamp(1rem,35vw,3rem);
+    grid-template-columns: minmax(1rem, 1fr)  repeat(2, minmax(0, 38rem)) minmax(1rem, 1fr);
+    gap:clamp(1rem,35vw,2rem);
     /* justify-items: center; */
     align-content:center;
     padding-inline: clamp(3rem,40vw,6rem);  
     padding: clamp(2rem,30vw,4rem) 0;                
 }
-.twitter-interface-wrapper{
+.twitter-interface-section{
     grid-template-areas: "nav-left main rm suggestion-right";            
     grid-template-columns: minmax(8rem, 1fr) minmax(36rem,40rem) minmax(3rem,4rem) minmax(8rem, 1fr);
     /* justify-items: center;
@@ -293,6 +303,14 @@ border-radius: 1rem;
     /* padding: clamp(2rem,30vw,4rem) 0;                 */
     grid-auto-rows: max-content;
     /* background-color: rgb(230, 199, 199); */
+}
+#twitter-interface-section[data-visible='true'],
+#daily-info-section[data-visible="true"],
+#daily-suggestion-section[data-visible="true"]{
+    display: grid;
+}
+#twitter-interface-section[data-visible='false']{
+    display: none;
 }
 
 .tabs-wrapper[data-tab-active='false'] .home-icon{
@@ -326,7 +344,6 @@ border-radius: 1rem;
     position: sticky;
     grid-area:nav-left;
     top:0;
-
     /* background-color: rgb(243, 243, 243); */
     /* width: 30vw;
     min-width: 16rem; */
@@ -353,10 +370,10 @@ border-radius: 1rem;
 }
 .nav-top>*:not(:first-child),
 .nav-bottom>*{
-    margin-bottom: clamp(1rem,10vw,2rem);
+    margin-bottom: clamp(1rem,10vw,1.5rem);
 }
 .nav-top>*:first-child{
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .nav-top{
     /* background-color: rgb(219, 219, 219); */
@@ -365,7 +382,13 @@ border-radius: 1rem;
 .nav-bottom{
     /* background-color: rgb(155, 155, 155); */
 }
-
+.instruction-button{
+    /* background-color: white;
+    border-radius: 40px;
+    text-align: center;
+    padding: 1rem 0.5rem; */
+    cursor: pointer;
+}
 .tabs-wrapper{
     cursor: pointer;
 }
@@ -378,10 +401,12 @@ border-radius: 1rem;
 
 #home-page[data-visible="true"],
 #profile-page[data-visible="true"],
-#data-page[data-visible="true"]
-{
+#data-page[data-visible="true"]{
     display: block;
 }
+
+#daily-suggestion-section[data-visible="false"],
+#daily-info-section[data-visible="false"],
 .welcome-slides[data-slide-active='false'],
 #home-page[data-visible="false"],
 #profile-page[data-visible="false"],
@@ -391,6 +416,7 @@ border-radius: 1rem;
 .welcome-slides[data-slide-active='true']{
     display:flex;
 }
+
 .main-area{
     grid-area: main;
     width: 100%;
@@ -402,6 +428,8 @@ border-radius: 1rem;
 }
 .home-tweet-wrapper{
     padding:2rem 1rem;
+    border-bottom: 1px solid rgb(233, 233, 233);
+
 }
 .home-tweet-wrapper:hover{
     background-color: rgba(247,247,247,255);
@@ -466,6 +494,18 @@ border-radius: 1rem;
 .data-area{
     padding:2rem;
 }
+.data-user-personal{
+    margin-bottom: 2rem;
+}
+.data-user-interest{
+    flex-direction: column;
+
+}
+.data-user-interest>p{
+    /* display: block;
+    width: 100%; */
+}
+    
 .suggestion-aside,
 .rm-bar,
 .nav{
@@ -483,9 +523,9 @@ border-radius: 1rem;
     padding: 1rem; 
     border-left: 1px solid rgb(233, 233, 233);
 }
-.aside-wrapper{
+/* .aside-wrapper{
   
-}
+} */
 
 .news-aside{
     height: 15rem;
@@ -503,21 +543,26 @@ border-radius: 1rem;
     background-color: rgb(247,249,249);
 }
 
-.sleep-button{
+.recommend-button-nav{
     background-color: var(--clr-twitter-blue);
     border-radius: 40px;
     text-align: center;
     padding: 1rem 0.5rem;
+    cursor: pointer;
 }
-.sleep-button:hover{
+.recommend-button-nav:hover{
     background-color: rgba(27,143,221,255);
-
+    
 }
-/* .sleep-button[data-sleep="false"]{
+/* .recommend-button-nav[data-sleep="false"]{
     content:'Radadad';
     background-color: red;
    
 } */
+.rm-indicator{
+    background-color: white;
+    padding:1rem;
+}
 .tabs,
 .algo-info{
     white-space: nowrap;
@@ -584,12 +629,15 @@ border-radius: 1rem;
 .tweet-areas{
     width: clamp(15rem,35vw,35rem);
     /* min-width: 15rem; */
-    background-color: rgba(0,0,0,0.5);
+    /* background-color: rgba(0,0,0,0.5); */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     padding:1rem;
+    margin:auto;
     border-radius: 20px;
+    height:min-content;
 }
 .tweets-choice-1{
     grid-area: tweet1;
@@ -600,6 +648,12 @@ border-radius: 1rem;
 .tweets-choice-3{
     grid-area: tweet3;
 }
+.twitter-tweet{
+    margin:0;
+}
+.twitter-tweet{
+    height:min-content;
+}
 .recommend-button{
     background-color: white;
     border: 2px solid white;
@@ -608,10 +662,10 @@ border-radius: 1rem;
     margin-top: 1rem;
     border-radius: 5rem;
     transition: all 200ms ease-in-out;
+    cursor: pointer;
 }
 .recommend-button>span{
     color: var(--clr-twitter-blue);
-    
 }
 .recommend-button:hover{
     background-color:var(--clr-twitter-blue);
@@ -633,13 +687,6 @@ border-radius: 1rem;
 
 p {
     font-weight: 50;
-}
-
-.mobile-designs-parent {
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
 }
 
 .rm-wrapper {
@@ -675,7 +722,7 @@ img {
     .nav-wrapper {
         max-width: 85%;
     } */
-    .twitter-interface-wrapper{
+    .twitter-interface-section{
         grid-template-columns: minmax(16rem, 1fr) minmax(20rem,40rem) minmax(3rem,4rem) minmax(10rem, 1fr);
     }
 }

@@ -3,10 +3,6 @@ var slidesOrder = document.getElementsByClassName("welcome-slides");
 
 let n = 0;
 
-
-
-
-
     document.body.addEventListener('click', () => {
         if (n< 4){
         console.log(n);
