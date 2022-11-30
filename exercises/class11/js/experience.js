@@ -1,7 +1,4 @@
 //Tabs is on nav, Pages is on Main area
-var tweetSFX = new Audio('./assets/audios/tweet.mp3');
-
-
 var tabs = document.getElementsByClassName("tabs-wrapper");
 var pages = document.getElementsByClassName("pages");
 // var slidesWelcome = document.getElementsByClassName("welcome-slides");
@@ -9,11 +6,6 @@ var homeTab = document.getElementById('home-tab');
 var homePage = document.getElementById('home-page');
 var profileTab = document.getElementById('profile-tab');
 var profilePage = document.getElementById('profile-page');
-
-let infoRevenueCounter = document.getElementById('revenue-counter');
-let infoDayCounter =document.getElementById('day-counter');
-let navRevenueCounter =document.getElementById('revenue-counter-nav');
-let navDayCounter =document.getElementById('day-counter-nav');
 
 //Daily Suggestions for 
 var dailyInfoSection = document.getElementById('daily-info-section');
@@ -39,30 +31,28 @@ var activityTab = document.getElementById('activity-tab');
 var activityPage = document.getElementById('activity-page');
 var pages = document.getElementsByClassName('pages');
 
-let rmBar;
-let rmScore = 0;
-rmBar= new RevenueMeter(document.querySelector('.rm-bar'));
-
-
 window.addEventListener("load", () => {
     console.log("page is fully loaded");
-    slidesOrder[0].setAttribute("data-slide-active", false);  
-    twitterInterfaceSection.setAttribute("data-visible", true);
-    instructionLocked = true;
+    // slidesOrder[0].setAttribute("data-slide-active", false);  
+    // twitterInterfaceSection.setAttribute("data-visible", true);
+    // instructionLocked = true;
 
 });
 // INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE   
 document.body.addEventListener('click', () => {
+    // dayEventCounter = 0;
     if (gameState =='info' && eventLocked ==true){
         eventLocked = false;
         console.log('hello');
     }
-    else if (gameState =='info'&& eventLocked ==false) {
-        gameState ='explore';
+    else if (gameState =='info' && eventLocked == false) {
+        gameState ='recommend';
         dailyInfoSection.setAttribute("data-visible",false);
-        twitterInterfaceSection.setAttribute("data-visible",true);
-        dailySuggestionSection.setAttribute("data-visible",false);
+        dailySuggestionSection.setAttribute("data-visible",true);
+        twitterInterfaceSection.setAttribute("data-visible",false);
         eventLocked =true;
+        console.log('goodbye');
+
         // console.log(eventLocked);
     }
 });
@@ -70,50 +60,29 @@ document.body.addEventListener('click', () => {
 // RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE 
 recommendButton1.addEventListener('click',()=>{
     if (gameState =='recommend') {
-        gameState ='info';
+        gameState ='explore';
         // dayEventCounter++;
-        tweetSFX.play();
-        alert("Recommended to Trevor! Waiting for user feedback...");
+        alert("Recommended to Trevor!")
+        dailyInfoSection.setAttribute("data-visible", false);
+        dailySuggestionSection.setAttribute("data-visible", false);
+        twitterInterfaceSection.setAttribute("data-visible", true);
         
-        dailyInfoSection.setAttribute("data-visible",true);
-        twitterInterfaceSection.setAttribute("data-visible",false);
-        dailySuggestionSection.setAttribute("data-visible",false);
-        
-        rmScore-= 10;
     }
-    updateRM();
-    updateDailyInfo();
-    
-});
-
+})
 recommendButton2.addEventListener('click',()=>{
     // dayEventCounter = 1;
     // console.log('clicked');
     // console.log(dayEventCounter);
     if (gameState =='recommend') {
-        gameState ='info';
-        tweetSFX.play();
-        alert("Recommended to Trevor! Wait for user feedback...");
-       
-        dailyInfoSection.setAttribute("data-visible",true);
-        twitterInterfaceSection.setAttribute("data-visible",false);
-        dailySuggestionSection.setAttribute("data-visible",false);
-        rmScore += 15;
+        gameState ='explore';
+        
+        alert("Recommended to Trevor!")
+        dailyInfoSection.setAttribute("data-visible", false);
+        dailySuggestionSection.setAttribute("data-visible", false);
+        twitterInterfaceSection.setAttribute("data-visible", true);
+        
     }
-
-    updateRM();
-    updateDailyInfo();
-});
-
-function updateRM(){
-    if (rmScore <0){
-        rmScore = 0
-    }
-    if (rmScore >100){
-        rmScore = 100;
-    }
-    rmBar.setValue(rmScore);
-}
+})
 // RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE 
 
 // TWITTER PHASE TWITTER PHASE TWITTER PHASE TWITTER PHASE TWITTER PHASE 
@@ -129,23 +98,17 @@ recommendButtonNav.addEventListener('click', () => {
     // }
     if (gameState =='explore') {
         // dayEventCounter=0;
-        gameState ='recommend'
-  
-        dailyInfoSection.setAttribute("data-visible",false);
-        twitterInterfaceSection.setAttribute("data-visible",false);
-        dailySuggestionSection.setAttribute("data-visible",true);
+        gameState ='info'
+        dayCounter++;
+        dailyInfoSection.setAttribute("data-visible", true);
+        dailySuggestionSection.setAttribute("data-visible", false);
+        twitterInterfaceSection.setAttribute("data-visible", false);
+        console.log(gameState);
     } 
     // console.log(dayEventCounter);
 });
 
-function updateDailyInfo(){
-    dayCounter++;
-    infoDayCounter.innerHTML = 'Day '+ dayCounter;
-    infoRevenueCounter.innerHTML= rmScore+ '$';
 
-    navDayCounter.innerHTML = 'Day '+ dayCounter;
-    navRevenueCounter.innerHTML= rmScore+ '$';
-}
 
 homeTab.addEventListener('click', () => {
     hidePages();
@@ -183,7 +146,6 @@ function hidePages() {
     // activityPage.setAttribute("data-visible",false);
 }
 
-// CODE TO DISPLAY REVENUE METER NEXT TO MOUSE
 var tooltips = document.querySelectorAll('.rm-indicator');
 
 window.onmousemove = function (e) {
@@ -196,9 +158,10 @@ window.onmousemove = function (e) {
 };
 
 
-// INSTRUCTION SLIDSE
+
 let slidesOrder = document.getElementsByClassName("welcome-slides");
 let slideCounter = 0;
+
     document.body.addEventListener('click', () => {
         // move slide forward
         if (slideCounter< 4 && !instructionLocked){
@@ -217,14 +180,8 @@ let slideCounter = 0;
     });
 
     instructionButton.addEventListener('click',()=>{
+        
         slidesOrder[0].setAttribute("data-slide-active", true);  
         twitterInterfaceSection.setAttribute("data-visible", false);
         instructionLocked = false;
     })
-
-
-
-
-   
-
-    

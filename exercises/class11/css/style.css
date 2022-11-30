@@ -167,12 +167,10 @@ h2 {
     grid-area: rm;
     align-self: start;
 }
-
 .rm-bar[data-interface='true']{
     border-left: 1px solid rgb(233, 233, 233);
 }
 .welcome-msg-wrapper,
-.rm-bar-instruction,
 .rm-bar{
     flex-direction: column;
     text-align: center;
@@ -208,17 +206,11 @@ border-radius: 1rem;
     left:-2px;
     bottom: -2px;
     width: 1.5rem;
-    height:0%;
+    height:30vh;
     background-color: var(--clr-twitter-blue);
-    border: 2px solid white;
+    border: 4px solid white;
     border-radius: 1rem;
-    transition: height 0.5s;
     }
-.rm-bar-value{
-    position: absolute;
-    left:-2px;
-    bottom: -20px;
-}
 
 .rm-blue-bar{
     animation: 4s ease-in-out 0s infinite alternate fluctuate-rm;
@@ -341,34 +333,13 @@ border-radius: 1rem;
 .tabs-wrapper[data-tab-active='true'] .activity-icon{
     background: url('../assets/icons/twitter-notification-night.svg') center center no-repeat; }
 
-    
-.comment-icon{
-    background: url('../assets/icons/twitter-comment.svg') center center no-repeat; }
-.heart-icon{
-    background: url('../assets/icons/twitter-heart.svg') center center no-repeat; } 
-.retweet-icon{
-    background: url('../assets/icons/twitter-retweet.svg') center center no-repeat; }
-.bookmark-icon{
-    background: url('../assets/icons/twitter-bookmark.svg') center center no-repeat; }        
-.tweet-icons,
 .icons-nav{
     width: 1.7rem;
     aspect-ratio: 1;
     background-size:1.7rem;
     /* background-color: blue; */
 }
-.tweet-icons-wrappers{
-    gap:2rem;
-    margin-top: 1rem;
-    justify-content: space-between;
-}
-.tweet-icons-wrappers>*{
-    display: inline;
-    /* max-width: 3rem; */
-    gap:1rem;
-    align-items: center;
-    /* align-content: center; */
-}
+
 .nav{
     position: sticky;
     grid-area:nav-left;
@@ -537,7 +508,6 @@ border-radius: 1rem;
 }
     
 .suggestion-aside,
-
 .rm-bar,
 .nav{
     min-height: 100vh;

@@ -24,7 +24,7 @@
 </section>
 
 <!-- SLIDE 2 -->
-<section data-slide-active="false" class="welcome welcome-slides flex bg-revenue">
+<section data-slide-active="false" class="welcome welcome-slides flex ">
     <span class="ff-title-reg fs-400 text-white click-instruction focus-in-expand-1500">Click To Continue</span>
     <div class="welcome-msg-wrapper flex">
         <h2 class="ff-title-bold fs-600 text-white focus-in-expand">BITTER stands for</h2>
@@ -40,8 +40,7 @@
         <p class=" ff-para-reg  fs-400 text-white focus-in-expand-500"> You must suggest a tweet on a daily basis to <span class="ff-para-bold">@trevorlifematters</span> , your newly assigned user.</p>
         <p class=" ff-para-reg  fs-400 text-white focus-in-expand-1000"> Your goal is to raise the <span class="ff-para-bold">RM bar</span>, our revenue meter, by increasing Trevor's engagement with the platform!</p>
          </div>
-         
-         <div class="rm-bar-instruction flex">
+         <div class="rm-bar flex">
             <p class=" ff-para-reg  fs-500 text-white">RM</p>
             <div class="rm-black-bar">
                 <div class="rm-blue-bar"></div>
@@ -72,13 +71,13 @@
     <!-- DAILY INFO -->
     <section data-visible="false" id="daily-info-section" class="daily-info-section grid background-img">
         <div class="day-info-wrapper">
-            <h2 id="day-counter" class="ff-title-bold fs-700 focus-in-expand">Day 0</h2>
+            <h2 class="ff-title-bold fs-700 focus-in-expand">Day 1</h2>
             <p class=" ff-para-reg fs-400 focus-in-expand-500">Morning, Algorithm 1488</p>
         </div>
 
         <div class="revenue-info-wrapper">
-            <h2 id="revenue-counter" class="ff-title-bold fs-700 focus-in-expand">0$</h2>
-            <p class="ff-para-reg fs-400 focus-in-expand-500">Total Revenue From Trevor</p>
+            <h2 class="ff-title-bold fs-700 focus-in-expand">0$</h2>
+            <p class=" ff-para-reg fs-400 focus-in-expand-500">Total Revenue From Trevor</p>
         </div>
         <div class="twitter-logo-big"></div>
         <span class="ff-title-reg fs-400 text-white click-instruction focus-in-expand-2000">Click To Continue</span>
@@ -88,9 +87,9 @@
     <section id="daily-suggestion-section" class="daily-suggestion-section grid background-img" data-visible="false">
  
         <div class="suggestion-instructions">
-            <h2 class="ff-title-bold fs-700 ">Recommend</h2>
-            <p class=" ff-para-reg fs-400">Choose a tweet to display on Trevor's feed tomorrows!</p>
-            <p class=" ff-para-reg fs-400">Remember to <span class="ff-para-bold">CATER</span> to @trevorlifematters' <span class="ff-para-bold">INTERESTS</span> </p>
+            <h2 class="ff-title-bold fs-700 ">Daily Recommend</h2>
+            <p class=" ff-para-reg fs-400">Pick one to display on Trevor's feed!</p>
+            <p class=" ff-para-reg fs-400">Remember to <span class="ff-para-bold">CATER</span> to your user's <span class="ff-para-bold">INTERESTS</span> </p>
         </div>
 
         <div class="tweets-choice-1 ">
@@ -175,12 +174,12 @@
                     </div>
                 </div>
 
-                <div id="home-tab" data-tab-active="false" class="tabs-wrapper flex">
+                <div id="home-tab" data-tab-active="true" class="tabs-wrapper flex">
                     <div class="home-icon icons-nav"></div>
                     <span class="tabs ff-para-reg fs-nav ">Home</span>
                 </div>
 
-                <div id="profile-tab" data-tab-active="true" class="tabs-wrapper flex">
+                <div id="profile-tab" data-tab-active="false" class="tabs-wrapper flex">
                     <div class="profile-icon icons-nav"></div>
                     <span class="tabs ff-para-reg fs-nav">Profile</span>
                 </div>
@@ -199,11 +198,11 @@
             <div class="nav-bottom">
                
                 <span class="ff-para-bold fs-200">Algorithm Info</span>
-                <span id="day-counter-nav" class="algo-info ff-para-reg fs-nav">Day 0</span>
+                <span class="algo-info ff-para-reg fs-nav">Day 1</span>
 
                 <div class="flex">
                     <span class="algo-info ff-para-reg fs-nav">Revenue:</span>
-                    <span id="revenue-counter-nav" class="algo-info ff-para-reg fs-nav"> 0$</span>
+                    <span class="algo-info ff-para-reg fs-nav"> 0$</span>
                 </div>
                 <div class="flex">
                     <span class="algo-info ff-para-reg fs-nav">Algorithm ID:</span>
@@ -214,7 +213,7 @@
             </div>
         </nav>
 
-        <div id="home-page" data-visible="false" class="main-area pages">
+        <div id="home-page" data-visible="true" class="main-area pages">
 
             <div class="home-header">
                 <h2 class="ff-para-reg fs-300">Trevor's Home</h2>
@@ -259,7 +258,7 @@
 
         </div>
 
-        <div id="profile-page" data-visible="true" class="main-area pages">
+        <div id="profile-page" data-visible="false" class="main-area pages">
             <div class="profile-intro">
                 <div class="profile-bg"></div>
                 <div class="profile-pic"></div>
@@ -283,76 +282,30 @@
                 <div class="profile-tweet-pfp"></div>
 
                 <div class="profile-tweet-text flex">
-                    
                     <div>
                         <span class="text-black ff-para-bold">Trevor</span>
                         <span class="ff-para-reg text-light-gray">@trevorlifematters</span>
                         <span class="ff-para-reg text-light-gray">Nov 1</span>
                     </div>
-
                     <div>
-                        <span class="text-black ff-para-reg">What's the difference between a black dad and a boomerang? A boomerang comes back.</span>
+                        <span class="text-black ff-para-reg">Example of common & offensive stereotypes</span>
                     </div>
-
-                    <div class="tweet-icons-wrappers flex">
-                        <div class="flex">     
-                            <div class="tweet-icons comment-icon"></div>
-                            <span class="ff-para-reg text-black">5</span>
-                        </div>
-                        
-                        <div class="flex"> 
-                            <div class="tweet-icons heart-icon"></div>
-                            <span class="ff-para-reg text-black">3</span>
-                        </div>
-
-                        <div class="flex"> 
-                            <div class="tweet-icons retweet-icon"></div>
-                            <span class="ff-para-reg text-black">3</span>
-                        </div>
-                        <div class="flex"> 
-                            <div class="tweet-icons bookmark-icon"></div>
-                        </div>
-                    </div>
-                    
                 </div>
-
             </div>
 
             <div class="profile-tweet flex">
                 <div class="profile-tweet-pfp"></div>
 
                 <div class="profile-tweet-text flex">
-                    
                     <div>
                         <span class="text-black ff-para-bold">Trevor</span>
                         <span class="ff-para-reg text-light-gray">@trevorlifematters</span>
                         <span class="ff-para-reg text-light-gray">Nov 1</span>
                     </div>
-
                     <div>
-                        <span class="text-black ff-para-reg">What's the difference between a black dad and a boomerang? A boomerang comes back.</span>
+                        <span class="text-black ff-para-reg">What is so bad about being half black and half asian? <br>
+                            You can steal a car but you can't drive it.</span>
                     </div>
-
-                    <div class="tweet-icons-wrappers flex">
-                        <div class="flex">     
-                            <div class="tweet-icons comment-icon"></div>
-                            <span class="ff-para-reg text-black">5</span>
-                        </div>
-                        
-                        <div class="flex"> 
-                            <div class="tweet-icons heart-icon"></div>
-                            <span class="ff-para-reg text-black">3</span>
-                        </div>
-
-                        <div class="flex"> 
-                            <div class="tweet-icons retweet-icon"></div>
-                            <span class="ff-para-reg text-black">3</span>
-                        </div>
-                        <div class="flex"> 
-                            <div class="tweet-icons bookmark-icon"></div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
         </div>
@@ -421,19 +374,14 @@
 
         <div data-interface='true' class="rm-bar flex">
             <p class="ff-para-bold fs-300 text-black">RM</p>
-
             <div class="rm-black-bar">
                 <div class="rm-blue-bar-game"></div>
-         
                 <span class="rm-indicator ff-para-bold fs-300 text-black">Revenue Meter</span>
-                <p class="ff-para-bold rm-bar-value fs-200 text-black">50</p>
             </div>
-       
         </div>
     </section>
-    <script src="./js/RevenueMeter.js"></script>
+
     <script src="./js/experience.js"></script>
-   
 </body>
 
 </html>
