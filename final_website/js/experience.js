@@ -46,9 +46,9 @@ rmBar= new RevenueMeter(document.querySelector('.rm-bar'));
 
 window.addEventListener("load", () => {
     console.log("page is fully loaded");
-    slidesOrder[0].setAttribute("data-slide-active", false);  
-    twitterInterfaceSection.setAttribute("data-visible", true);
-    instructionLocked = true;
+    // slidesOrder[0].setAttribute("data-slide-active", false);  
+    // twitterInterfaceSection.setAttribute("data-visible", true);
+    // instructionLocked = true;
 
 });
 // INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE   
