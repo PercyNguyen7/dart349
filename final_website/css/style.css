@@ -69,8 +69,8 @@ picture {
 
     --ff-title-bold: "GT_America_Bold", sans-serif;
     --ff-title-reg: "GT_America_Regular", sans-serif;
-    --ff-para-bold: "Helvetica_Neue_TPro_Bold", sans-serif;
-    --ff-para-reg: "Helvetica_Neue_TPro_Regular", sans-serif;
+    --ff-para-bold:   "Helvetica_Neue_TPro_Bold", sans-serif ;
+    --ff-para-reg:   "Helvetica_Neue_TPro_Regular", sans-serif ;
     /* font-sizes */
     --fs-700:clamp(4rem, 6vw,7rem);
     --fs-600:clamp(3rem,20vw, 4rem);
@@ -87,7 +87,9 @@ picture {
 .ff-sans { font-family: var(--ff-sans);}  */
 .ff-title-bold {font-family: var(--ff-title-bold)}
 .ff-title-reg {font-family: var(--ff-title-reg)}
-.ff-para-bold {font-family: var(--ff-para-bold)}
+.ff-para-bold {
+    font-family: var(--ff-para-bold);
+font-weight:lighter !important;}
 .ff-para-reg {font-family: var(--ff-para-reg)}
 
 .text-yellow {color: var(--clr-yellow);}
@@ -206,7 +208,7 @@ border-radius: 1rem;
 .rm-blue-bar-game{
     position: absolute;
     left:-2px;
-    bottom: -2px;
+    bottom: 0px;
     width: 1.5rem;
     height:0%;
     background-color: var(--clr-twitter-blue);
@@ -453,11 +455,11 @@ border-radius: 1rem;
 }
 .home-header,
 .data-header{
-    padding:2rem 1rem;
+    padding:1rem 1rem;
     border-bottom: 1px solid rgb(233, 233, 233);
 }
 .home-tweet-wrapper{
-    padding:2rem 1rem;
+    padding:1rem 1rem;
     border-bottom: 1px solid rgb(233, 233, 233);
 
 }
@@ -472,15 +474,15 @@ border-radius: 1rem;
     margin: 0 auto;
 }
 .profile-intro{
-    padding: 0rem 2rem;
+    padding: 0rem 1rem;
     border-bottom: 1px solid rgb(233, 233, 233);
 }
 .profile-bg{
     /* background-color: rgb(233,233,233); */
     background: url('../assets/images/trevor/racist-chicken-meme.png') center center  no-repeat;
-    background-size:contain;
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
+    background-size:cover;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
     height:14rem;
 }
 .profile-pic{
@@ -504,14 +506,14 @@ border-radius: 1rem;
     margin-top:1rem;
 }
 .profile-tweet{
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1rem;
     border-bottom: 1px solid rgb(233, 233, 233);
 }
 .profile-tweet-pfp{
     background:url('../assets/images/trevor/LennyFace.png') center center  no-repeat;
     background-size: cover;
-    min-width: clamp(2rem,40vw,4rem);
-    height:clamp(2rem,40vw,4rem);
+    min-width: clamp(2rem,40vw,3rem);
+    height:clamp(2rem,40vw,3rem);
     border:2px solid black;
     border-radius: 50%;
 }
@@ -522,10 +524,10 @@ border-radius: 1rem;
 }
 
 .data-area{
-    padding:2rem;
+    padding:1rem;
 }
 .data-user-personal{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .data-user-interest{
     flex-direction: column;
