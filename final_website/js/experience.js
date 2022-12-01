@@ -201,15 +201,15 @@ let slidesOrder = document.getElementsByClassName("welcome-slides");
 let slideCounter = 0;
     document.body.addEventListener('click', () => {
         // move slide forward
-        if (slideCounter< 4 && !instructionLocked){
+        if (slideCounter< 5 && !instructionLocked){
         console.log(slideCounter);
             slidesOrder[slideCounter].setAttribute("data-slide-active", false);  
             slideCounter ++;
             slidesOrder[slideCounter].setAttribute("data-slide-active", true);
         } //else, reset slide number
-        else if (slideCounter === 4 && !instructionLocked){
+        else if (slideCounter === 5 && !instructionLocked){
             // window.location.href = "experience.html";
-            slidesOrder[4].setAttribute("data-slide-active", false);  
+            slidesOrder[5].setAttribute("data-slide-active", false);  
             twitterInterfaceSection.setAttribute("data-visible", true);
             slideCounter = 0;
             instructionLocked = true;
