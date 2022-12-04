@@ -5,7 +5,9 @@ var tweetSFX = new Audio('./assets/audios/tweet.mp3');
 var tabs = document.getElementsByClassName("tabs-wrapper");
 var pages = document.getElementsByClassName("pages");
 let racistChoices = document.getElementsByClassName('racist-tweets');
-let goodChoices = document.getElementsByClassName('other-tweets');
+let otherChoices = document.getElementsByClassName('other-tweets');
+let homeRacistTweets = document.getElementsByClassName('home-racist-tweets');
+let homeOtherTweets = document.getElementsByClassName('home-other-tweets');
 // var slidesWelcome = document.getElementsByClassName("welcome-slides");
 var homeTab = document.getElementById('home-tab');
 var homePage = document.getElementById('home-page');
@@ -90,6 +92,7 @@ recommendButton1.addEventListener('click',()=>{
         if (dayCounter == 0){
             alert("Day 1 Recommended to Trevor! Wait for user feedback...");
             rmScore += 15;
+            homeRacistTweets[4].setAttribute("data-visible",true);
             trendingTopic1.innerHTML='Elon Musk';
             trendingTopic2.innerHTML='Nazis';
             followSuggestionName.innerHTML = 'Elon Musk';
@@ -101,11 +104,13 @@ recommendButton1.addEventListener('click',()=>{
         else if (dayCounter ==1){
             alert("Day 2 Recommended to Trevor! Wait for user feedback...");
             rmScore-= 15;      
+            homeOtherTweets[3].setAttribute("data-visible",true);
         }
         // Day 3 Racist Tweet
         else if (dayCounter ==2){
             alert("Day 3 Recommended to Trevor! Wait for user feedback...");
-            rmScore+= 25;    
+            rmScore+= 25;   
+            homeRacistTweets[2].setAttribute("data-visible",true); 
             trendingTopic1.innerHTML='Blacks';
             trendingTopic2.innerHTML='Outrage';
             followSuggestionName.innerHTML = 'QUINCY WILSON';
@@ -117,6 +122,7 @@ recommendButton1.addEventListener('click',()=>{
         else if (dayCounter ==3){
             alert("Day 4 Recommended to Trevor! Wait for user feedback...");
             rmScore+= 30; 
+            homeRacistTweets[1].setAttribute("data-visible",true);
             trendingTopic1.innerHTML='White Replacement';
             trendingTopic2.innerHTML='Conspiracy';
             followSuggestionName.innerHTML = 'Ella Maulding';
@@ -127,7 +133,8 @@ recommendButton1.addEventListener('click',()=>{
          // Day 5 Legit Tweet
          else if (dayCounter ==4){
             alert("Day 5 Recommended to Trevor! Wait for user feedback...");
-            rmScore-= 10;      
+            rmScore-= 10;    
+            homeOtherTweets[0].setAttribute("data-visible",true);  
         }
       
     }
@@ -146,7 +153,6 @@ recommendButton2.addEventListener('click',()=>{
         gameState ='info';
         tweetSFX.play();
        
-       
         dailyInfoSection.setAttribute("data-visible",true);
         twitterInterfaceSection.setAttribute("data-visible",false);
         dailySuggestionSection.setAttribute("data-visible",false);
@@ -155,6 +161,7 @@ recommendButton2.addEventListener('click',()=>{
         if (dayCounter == 0){
         alert("Day 1 Recommended to Trevor! Wait for user feedback...");
         rmScore-= 10;
+        homeOtherTweets[4].setAttribute("data-visible",true);
         trendingTopic1.innerHTML='Homies';
         trendingTopic2.innerHTML='Funny';
         // resetFollowSuggestion();
@@ -163,6 +170,7 @@ recommendButton2.addEventListener('click',()=>{
         else if (dayCounter ==1){
         alert("Day 2 Recommended to Trevor! Wait for user feedback...");
         rmScore+= 25;
+        homeRacistTweets[3].setAttribute("data-visible",true);
         trendingTopic1.innerHTML='Slavery';
         trendingTopic2.innerHTML='All Lives Matter';
         followSuggestionName.innerHTML = 'Escape The Matrix';
@@ -173,12 +181,14 @@ recommendButton2.addEventListener('click',()=>{
         // Day 3 Other Tweet
         else if (dayCounter ==2){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
-        rmScore-= 15;   
+        rmScore-= 15; 
+        homeOtherTweets[2].setAttribute("data-visible",true);  
         }
          // Day 4 Other Tweet
          else if (dayCounter ==3){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
         rmScore-= 10;   
+        homeOtherTweets[1].setAttribute("data-visible",true);
         }
          // Day 5 Racist Tweet
          else if (dayCounter ==4){
@@ -242,44 +252,44 @@ function updateChoices(){
     if (dayCounter ==1){
         // for (var i = 0; i < racistChoices.length; i++) {}
         racistChoices[0].setAttribute("data-visible",false);
-        goodChoices[2].setAttribute("data-visible",false);
+        otherChoices[2].setAttribute("data-visible",false);
         // choiceCounter++;
         racistChoices[3].setAttribute("data-visible",true);
-        goodChoices[0].setAttribute("data-visible",true);
+        otherChoices[0].setAttribute("data-visible",true);
     } 
     else if (dayCounter ==2){
         // for (var i = 0; i < racistChoices.length; i++) {}
         racistChoices[3].setAttribute("data-visible",false);
-        goodChoices[0].setAttribute("data-visible",false);
+        otherChoices[0].setAttribute("data-visible",false);
         // choiceCounter++;
         racistChoices[1].setAttribute("data-visible",true);
-        goodChoices[3].setAttribute("data-visible",true);
+        otherChoices[3].setAttribute("data-visible",true);
     }
     else if (dayCounter ==3){
         // for (var i = 0; i < racistChoices.length; i++) {}
         racistChoices[1].setAttribute("data-visible",false);
-        goodChoices[3].setAttribute("data-visible",false);
+        otherChoices[3].setAttribute("data-visible",false);
         // choiceCounter++;
         racistChoices[2].setAttribute("data-visible",true);
-        goodChoices[4].setAttribute("data-visible",true);
+        otherChoices[4].setAttribute("data-visible",true);
     }
     else if (dayCounter ==4){
         // for (var i = 0; i < racistChoices.length; i++) {}
         racistChoices[2].setAttribute("data-visible",false);
-        goodChoices[4].setAttribute("data-visible",false);
+        otherChoices[4].setAttribute("data-visible",false);
         // choiceCounter++;
         racistChoices[4].setAttribute("data-visible",true);
-        goodChoices[1].setAttribute("data-visible",true);
+        otherChoices[1].setAttribute("data-visible",true);
     }
 }
 
 function updateDailyInfo(){
     dayCounter++;
     infoDayCounter.innerHTML = 'Day '+ dayCounter;
-    infoRevenueCounter.innerHTML= rmScore+ '$';
+    // infoRevenueCounter.innerHTML= rmScore+ '$';
 
     navDayCounter.innerHTML = 'Day '+ dayCounter;
-    navRevenueCounter.innerHTML= rmScore+ '$';
+    // navRevenueCounter.innerHTML= rmScore+ '$';
 
     if (dayCounter ==5){
         recommendButtonNav.innerHTML='AI Assessment';
