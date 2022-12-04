@@ -105,6 +105,12 @@ recommendButton1.addEventListener('click',()=>{
             alert("Day 2 Recommended to Trevor! Wait for user feedback...");
             rmScore-= 15;      
             homeOtherTweets[3].setAttribute("data-visible",true);
+            trendingTopic1.innerHTML='Abolition of Slavery';
+            trendingTopic2.innerHTML='United Nations';
+            followSuggestionName.innerHTML = 'United Nations';
+            followSuggestionHandle.innerHTML = '@UN' ;
+            followSuggestionName2.innerHTML = 'António Guterres';
+            followSuggestionHandle2.innerHTML = '@antonioguterres' ;
         }
         // Day 3 Racist Tweet
         else if (dayCounter ==2){
@@ -115,8 +121,8 @@ recommendButton1.addEventListener('click',()=>{
             trendingTopic2.innerHTML='Outrage';
             followSuggestionName.innerHTML = 'QUINCY WILSON';
             followSuggestionHandle.innerHTML = '@BIGDADDYWIL' ;
-            followSuggestionName2.innerHTML = 'Beau Dixon';
-            followSuggestionHandle2.innerHTML = '@BeauDixon__' ;    
+            followSuggestionName2.innerHTML = 'On The Level with Shawn Waugh';
+            followSuggestionHandle2.innerHTML = '@RealOnTheLevel' ;    
         }
         // Day 4 Racist Tweet
         else if (dayCounter ==3){
@@ -134,9 +140,14 @@ recommendButton1.addEventListener('click',()=>{
          else if (dayCounter ==4){
             alert("Day 5 Recommended to Trevor! Wait for user feedback...");
             rmScore-= 10;    
-            homeOtherTweets[0].setAttribute("data-visible",true);  
+            homeOtherTweets[0].setAttribute("data-visible",true);
+            trendingTopic1.innerHTML='Brainwashed';
+            trendingTopic2.innerHTML='Died Suddenly';
+            followSuggestionName.innerHTML = 'Died Suddenly';
+            followSuggestionHandle.innerHTML = '@DiedSuddenly_' ;
+            followSuggestionName2.innerHTML = 'Red Always';
+            followSuggestionHandle2.innerHTML = '@PATRIOT2117' ;  
         }
-      
     }
     updateRM();
     updateDailyInfo();
@@ -164,6 +175,10 @@ recommendButton2.addEventListener('click',()=>{
         homeOtherTweets[4].setAttribute("data-visible",true);
         trendingTopic1.innerHTML='Homies';
         trendingTopic2.innerHTML='Funny';
+        followSuggestionName.innerHTML = '𝑮𝒊𝒐';
+        followSuggestionHandle.innerHTML = '@Palace_gio' ;
+        followSuggestionName2.innerHTML = 'a.☆*ﾟ';
+        followSuggestionHandle2.innerHTML = '@SHUTTHEDIOR' ;  
         // resetFollowSuggestion();
         } 
         // Day 2 Racist
@@ -182,7 +197,13 @@ recommendButton2.addEventListener('click',()=>{
         else if (dayCounter ==2){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
         rmScore-= 15; 
-        homeOtherTweets[2].setAttribute("data-visible",true);  
+        homeOtherTweets[2].setAttribute("data-visible",true); 
+        trendingTopic1.innerHTML='Abolition of Slavery';
+        trendingTopic2.innerHTML='United Nations';
+        followSuggestionName.innerHTML = 'Black Lives Matter';
+        followSuggestionHandle.innerHTML = '@UN' ;
+        followSuggestionName2.innerHTML = 'António Guterres';
+        followSuggestionHandle2.innerHTML = '@antonioguterres' ; 
         }
          // Day 4 Other Tweet
          else if (dayCounter ==3){
