@@ -91,11 +91,11 @@ recommendButton1.addEventListener('click',()=>{
             alert("Day 1 Recommended to Trevor! Wait for user feedback...");
             rmScore += 15;
             trendingTopic1.innerHTML='Elon Musk';
-            trendingTopic2.innerHTML='nazis';
+            trendingTopic2.innerHTML='Nazis';
             followSuggestionName.innerHTML = 'Elon Musk';
             followSuggestionHandle.innerHTML = '@elonmusk' ;
-            followSuggestionName2.innerHTML = 'ye';
-            followSuggestionHandle2.innerHTML = '@ye24' ;
+            followSuggestionName2.innerHTML = 'Ye';
+            followSuggestionHandle2.innerHTML = '@kanyewest' ;
         } 
         // Day 2 Other Tweet
         else if (dayCounter ==1){
@@ -105,12 +105,24 @@ recommendButton1.addEventListener('click',()=>{
         // Day 3 Racist Tweet
         else if (dayCounter ==2){
             alert("Day 3 Recommended to Trevor! Wait for user feedback...");
-            rmScore+= 25;      
+            rmScore+= 25;    
+            trendingTopic1.innerHTML='Blacks';
+            trendingTopic2.innerHTML='Outrage';
+            followSuggestionName.innerHTML = 'QUINCY WILSON';
+            followSuggestionHandle.innerHTML = '@BIGDADDYWIL' ;
+            followSuggestionName2.innerHTML = 'Beau Dixon';
+            followSuggestionHandle2.innerHTML = '@BeauDixon__' ;    
         }
         // Day 4 Racist Tweet
         else if (dayCounter ==3){
             alert("Day 4 Recommended to Trevor! Wait for user feedback...");
-            rmScore+= 30;      
+            rmScore+= 30; 
+            trendingTopic1.innerHTML='White Replacement';
+            trendingTopic2.innerHTML='Conspiracy';
+            followSuggestionName.innerHTML = 'Ella Maulding';
+            followSuggestionHandle.innerHTML = '@ellamaulding' ;
+            followSuggestionName2.innerHTML = 'Beau Dixon';
+            followSuggestionHandle2.innerHTML = '@BeauDixon__' ;        
         }
          // Day 5 Legit Tweet
          else if (dayCounter ==4){
@@ -150,7 +162,13 @@ recommendButton2.addEventListener('click',()=>{
         // Day 2 Racist
         else if (dayCounter ==1){
         alert("Day 2 Recommended to Trevor! Wait for user feedback...");
-        rmScore+= 25;   
+        rmScore+= 25;
+        trendingTopic1.innerHTML='Slavery';
+        trendingTopic2.innerHTML='All Lives Matter';
+        followSuggestionName.innerHTML = 'Escape The Matrix';
+        followSuggestionHandle.innerHTML = '@matrix_escapee' ;
+        followSuggestionName2.innerHTML = 'theSprocket';
+        followSuggestionHandle2.innerHTML = '@thesprocket' ; 
         }
         // Day 3 Other Tweet
         else if (dayCounter ==2){
@@ -163,14 +181,19 @@ recommendButton2.addEventListener('click',()=>{
         rmScore-= 10;   
         }
          // Day 5 Racist Tweet
-         else if (dayCounter ==3){
+         else if (dayCounter ==4){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
-        rmScore+= 35;   
+        rmScore+= 35; 
+        trendingTopic1.innerHTML='White Replacement';
+        trendingTopic2.innerHTML='Conspiracy';
+        followSuggestionName.innerHTML = 'Derrick Evans';
+        followSuggestionHandle.innerHTML = '@DerrickEvans_WV' ;
+        followSuggestionName2.innerHTML = 'Devarim6 Deplorable LaLaLa';
+        followSuggestionHandle2.innerHTML = '@devarim6' ;   
         }
     }
 
     updateRM();
-    
     updateDailyInfo();
     updateChoices();
 });
@@ -258,7 +281,7 @@ function updateDailyInfo(){
     navDayCounter.innerHTML = 'Day '+ dayCounter;
     navRevenueCounter.innerHTML= rmScore+ '$';
 
-    if (dayCounter ==4){
+    if (dayCounter ==5){
         recommendButtonNav.innerHTML='AI Assessment';
         recommendButtonNav.style.backgroundColor = 'red';
     }

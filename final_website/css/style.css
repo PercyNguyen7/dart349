@@ -436,7 +436,10 @@ border-radius: 1rem;
 #profile-page[data-visible="true"],
 #data-page[data-visible="true"],
 .racist-tweets[data-visible='true'],
-.other-tweets[data-visible='true']{
+.other-tweets[data-visible='true'],
+.home-racist-tweets[data-visible='true'],
+.home-other-tweets[data-visible='true'],
+.home-initial-tweets[data-visible='true']{
     display: block;
 }
 
@@ -448,7 +451,11 @@ border-radius: 1rem;
 #activity-page[data-visible="false"],
 #data-page[data-visible="false"],
 .racist-tweets[data-visible='false'],
-.other-tweets[data-visible='false']{
+.other-tweets[data-visible='false'],
+.home-racist-tweets[data-visible='false'],
+.home-other-tweets[data-visible='false'],
+.home-initial-tweets[data-visible='false']
+{
     display: none;
 }
 .welcome-slides[data-slide-active='true']{
@@ -702,7 +709,7 @@ border-radius: 1rem;
     grid-area: tweet3;
 }
 .twitter-tweet{
-    margin:0;
+    margin:0 auto;
 }
 .twitter-tweet{
     height:min-content;
