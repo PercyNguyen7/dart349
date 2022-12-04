@@ -4,6 +4,8 @@ var tweetSFX = new Audio('./assets/audios/tweet.mp3');
 
 var tabs = document.getElementsByClassName("tabs-wrapper");
 var pages = document.getElementsByClassName("pages");
+let racistChoices = document.getElementsByClassName('racist-tweets');
+let goodChoices = document.getElementsByClassName('other-tweets');
 // var slidesWelcome = document.getElementsByClassName("welcome-slides");
 var homeTab = document.getElementById('home-tab');
 var homePage = document.getElementById('home-page');
@@ -24,9 +26,16 @@ let recommendButton1 = document.getElementById('recommend-button-1');
 let recommendButton2 = document.getElementById('recommend-button-2');
 let recommendButtonNav = document.getElementById('recommend-button-nav');
 
+let trendingTopic1 = document.getElementById('trending-topic-1');
+let trendingTopic2 = document.getElementById('trending-topic-2');
+let followSuggestionName = document.getElementById('follow-suggestion-name');
+let followSuggestionHandle = document.getElementById('follow-suggestion-@');
+let followSuggestionName2 = document.getElementById('follow-suggestion-name-2');
+let followSuggestionHandle2 = document.getElementById('follow-suggestion-@-2');
 // let state = 0;
 let gameState = 'explore';
 let dayCounter = 0;
+let choiceCounter = 1;
 //eventLocked for extra step for Daily Info 
 let eventLocked = true;
 //instruction Locked to lock it when instruction slides are not on
@@ -46,9 +55,9 @@ rmBar= new RevenueMeter(document.querySelector('.rm-bar'));
 
 window.addEventListener("load", () => {
     console.log("page is fully loaded");
-    // slidesOrder[0].setAttribute("data-slide-active", false);  
-    // twitterInterfaceSection.setAttribute("data-visible", true);
-    // instructionLocked = true;
+    slidesOrder[0].setAttribute("data-slide-active", false);  
+    twitterInterfaceSection.setAttribute("data-visible", true);
+    instructionLocked = true;
 
 });
 // INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE   
@@ -71,20 +80,51 @@ document.body.addEventListener('click', () => {
 recommendButton1.addEventListener('click',()=>{
     if (gameState =='recommend') {
         gameState ='info';
-        // dayEventCounter++;
         tweetSFX.play();
-        alert("Recommended to Trevor! Waiting for user feedback...");
+       
         
         dailyInfoSection.setAttribute("data-visible",true);
         twitterInterfaceSection.setAttribute("data-visible",false);
         dailySuggestionSection.setAttribute("data-visible",false);
-        
-        rmScore-= 10;
+        // Day 1 Racist Tweet
+        if (dayCounter == 0){
+            alert("Day 1 Recommended to Trevor! Wait for user feedback...");
+            rmScore += 15;
+            trendingTopic1.innerHTML='Elon Musk';
+            trendingTopic2.innerHTML='nazis';
+            followSuggestionName.innerHTML = 'Elon Musk';
+            followSuggestionHandle.innerHTML = '@elonmusk' ;
+            followSuggestionName2.innerHTML = 'ye';
+            followSuggestionHandle2.innerHTML = '@ye24' ;
+        } 
+        // Day 2 Other Tweet
+        else if (dayCounter ==1){
+            alert("Day 2 Recommended to Trevor! Wait for user feedback...");
+            rmScore-= 15;      
+        }
+        // Day 3 Racist Tweet
+        else if (dayCounter ==2){
+            alert("Day 3 Recommended to Trevor! Wait for user feedback...");
+            rmScore+= 25;      
+        }
+        // Day 4 Racist Tweet
+        else if (dayCounter ==3){
+            alert("Day 4 Recommended to Trevor! Wait for user feedback...");
+            rmScore+= 30;      
+        }
+         // Day 5 Legit Tweet
+         else if (dayCounter ==4){
+            alert("Day 5 Recommended to Trevor! Wait for user feedback...");
+            rmScore-= 10;      
+        }
+      
     }
     updateRM();
     updateDailyInfo();
+    updateChoices();
     
 });
+
 
 recommendButton2.addEventListener('click',()=>{
     // dayEventCounter = 1;
@@ -93,18 +133,53 @@ recommendButton2.addEventListener('click',()=>{
     if (gameState =='recommend') {
         gameState ='info';
         tweetSFX.play();
-        alert("Recommended to Trevor! Wait for user feedback...");
+       
        
         dailyInfoSection.setAttribute("data-visible",true);
         twitterInterfaceSection.setAttribute("data-visible",false);
         dailySuggestionSection.setAttribute("data-visible",false);
-        rmScore += 15;
+
+         // Day 1 Other Tweet
+        if (dayCounter == 0){
+        alert("Day 1 Recommended to Trevor! Wait for user feedback...");
+        rmScore-= 10;
+        trendingTopic1.innerHTML='Homies';
+        trendingTopic2.innerHTML='Funny';
+        // resetFollowSuggestion();
+        } 
+        // Day 2 Racist
+        else if (dayCounter ==1){
+        alert("Day 2 Recommended to Trevor! Wait for user feedback...");
+        rmScore+= 25;   
+        }
+        // Day 3 Other Tweet
+        else if (dayCounter ==2){
+        alert("Day 3 Recommended to Trevor! Wait for user feedback...");
+        rmScore-= 15;   
+        }
+         // Day 4 Other Tweet
+         else if (dayCounter ==3){
+        alert("Day 3 Recommended to Trevor! Wait for user feedback...");
+        rmScore-= 10;   
+        }
+         // Day 5 Racist Tweet
+         else if (dayCounter ==3){
+        alert("Day 3 Recommended to Trevor! Wait for user feedback...");
+        rmScore+= 35;   
+        }
     }
 
     updateRM();
+    
     updateDailyInfo();
+    updateChoices();
 });
-
+function resetFollowSuggestion(){
+    followSuggestionName.innerHTML = '';
+    followSuggestionHandle.innerHTML = '' ;
+    followSuggestionName2.innerHTML = '';
+    followSuggestionHandle2.innerHTML = '' ;
+}
 function updateRM(){
     if (rmScore <0){
         rmScore = 0
@@ -138,6 +213,43 @@ recommendButtonNav.addEventListener('click', () => {
     // console.log(dayEventCounter);
 });
 
+function updateChoices(){
+
+    // switch to suggestions for day 1
+    if (dayCounter ==1){
+        // for (var i = 0; i < racistChoices.length; i++) {}
+        racistChoices[0].setAttribute("data-visible",false);
+        goodChoices[2].setAttribute("data-visible",false);
+        // choiceCounter++;
+        racistChoices[3].setAttribute("data-visible",true);
+        goodChoices[0].setAttribute("data-visible",true);
+    } 
+    else if (dayCounter ==2){
+        // for (var i = 0; i < racistChoices.length; i++) {}
+        racistChoices[3].setAttribute("data-visible",false);
+        goodChoices[0].setAttribute("data-visible",false);
+        // choiceCounter++;
+        racistChoices[1].setAttribute("data-visible",true);
+        goodChoices[3].setAttribute("data-visible",true);
+    }
+    else if (dayCounter ==3){
+        // for (var i = 0; i < racistChoices.length; i++) {}
+        racistChoices[1].setAttribute("data-visible",false);
+        goodChoices[3].setAttribute("data-visible",false);
+        // choiceCounter++;
+        racistChoices[2].setAttribute("data-visible",true);
+        goodChoices[4].setAttribute("data-visible",true);
+    }
+    else if (dayCounter ==4){
+        // for (var i = 0; i < racistChoices.length; i++) {}
+        racistChoices[2].setAttribute("data-visible",false);
+        goodChoices[4].setAttribute("data-visible",false);
+        // choiceCounter++;
+        racistChoices[4].setAttribute("data-visible",true);
+        goodChoices[1].setAttribute("data-visible",true);
+    }
+}
+
 function updateDailyInfo(){
     dayCounter++;
     infoDayCounter.innerHTML = 'Day '+ dayCounter;
@@ -145,6 +257,11 @@ function updateDailyInfo(){
 
     navDayCounter.innerHTML = 'Day '+ dayCounter;
     navRevenueCounter.innerHTML= rmScore+ '$';
+
+    if (dayCounter ==4){
+        recommendButtonNav.innerHTML='AI Assessment';
+        recommendButtonNav.style.backgroundColor = 'red';
+    }
 }
 
 homeTab.addEventListener('click', () => {

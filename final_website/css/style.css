@@ -77,8 +77,8 @@ picture {
     --fs-500: clamp(2.5rem, 6vw, 3rem);
     --fs-400: clamp(1.5rem, 6vw, 2rem);
     --fs-350: 1.5rem;
-    --fs-300: clamp(1rem, 6vw, 1.1rem);
-    --fs-200: 0.875rem;
+    --fs-300: clamp(1rem, 6vw, 1.25rem);
+    --fs-200: 0.85rem;
 
     --fs-nav: 1rem;
 }
@@ -105,7 +105,7 @@ font-weight:lighter !important;}
 .fs-600 {
     line-height: 1.1;
 }
-
+.fs-200 {font-size: var(--fs-200);}
 .fs-300 {font-size: var(--fs-300);}
 .fs-350 {font-size: var(--fs-350);}
 .fs-400 {font-size: var(--fs-400);
@@ -216,7 +216,7 @@ border-radius: 1rem;
     background-color: var(--clr-twitter-blue);
     border: 2px solid white;
     border-radius: 1rem;
-    transition: height 3s;
+    transition: all 10s;
     }
 .rm-bar-value{
     position: absolute;
@@ -293,7 +293,7 @@ border-radius: 1rem;
 /*                  DAY SUGGESTION             */
 /*                  DAY SUGGESTION             */
 .daily-suggestion-section{
-    /* background-color: var(--clr-twitter-blue); */
+    background-color: var(--clr-twitter-blue);
     min-height: 100vh;
     grid-template-areas: ". text text ."
                          ". tweet1 tweet2."
@@ -393,7 +393,7 @@ border-radius: 1rem;
 }
 .nav span,p{
     display: block;
-    font-weight: 100;
+    /* font-weight: 100; */
     /* width: min-content; */
 }
 
@@ -434,7 +434,9 @@ border-radius: 1rem;
 
 #home-page[data-visible="true"],
 #profile-page[data-visible="true"],
-#data-page[data-visible="true"]{
+#data-page[data-visible="true"],
+.racist-tweets[data-visible='true'],
+.other-tweets[data-visible='true']{
     display: block;
 }
 
@@ -444,7 +446,9 @@ border-radius: 1rem;
 #home-page[data-visible="false"],
 #profile-page[data-visible="false"],
 #activity-page[data-visible="false"],
-#data-page[data-visible="false"]{
+#data-page[data-visible="false"],
+.racist-tweets[data-visible='false'],
+.other-tweets[data-visible='false']{
     display: none;
 }
 .welcome-slides[data-slide-active='true']{
@@ -485,8 +489,8 @@ border-radius: 1rem;
 }
 .profile-bg{
     /* background-color: rgb(233,233,233); */
-    background: url('../assets/images/trevor/racist-chicken-meme.png') center center  no-repeat;
-    background-size:cover;
+    background: url('../assets/images/trevor/bg1.jpg') center center  no-repeat;
+    background-size:contain;
     width: calc(100% + 2rem);
     margin-left: -1rem;
     height:14rem;
@@ -567,8 +571,16 @@ border-radius: 1rem;
 } */
 
 .news-aside{
-    height: 15rem;
+   
+    min-height: 15rem;
+
 }
+.news-aside>*:not(:first-child){
+    flex-direction: column;
+    margin-top: 1rem;
+    /* background-color: red; */
+}
+
 
 .follow-aside{
     height:20rem;
@@ -638,6 +650,7 @@ border-radius: 1rem;
 .twitter-pfp-wrapper{
     justify-content: start;
     align-items: center;
+    margin-top: 1rem;
     gap:0.5rem;
 }
 .trevor-pfp,
@@ -666,17 +679,18 @@ border-radius: 1rem;
 .tweets-choice-3{
 }
 .tweet-areas{
-    width: clamp(15rem,35vw,35rem);
+    width: clamp(22rem,35vw,35rem);
     /* min-width: 15rem; */
     /* background-color: rgba(0,0,0,0.5); */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    text-align: center;
+    /* align-content: center; */
     padding:1rem;
-    margin:auto;
     border-radius: 20px;
-    height:min-content;
+    /* height:min-content; */
+}
+.recommend-button{
+    margin: auto;
+    /* text-align: center; */
 }
 .tweets-choice-1{
     grid-area: tweet1;
