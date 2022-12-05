@@ -26,7 +26,8 @@ let profileTweetPFP = document.getElementsByClassName('profile-tweet-pfp');
 let trevorPFP = document.getElementsByClassName('trevor-pfp');
 let profileBG =document.getElementsByClassName('profile-bg');
 
-let endScene = document.getElementById('end-slide');
+let endSlideLost = document.getElementById('end-slide');
+let endSlideWin = document.getElementById('end-slide-win');
 let finalScore = document.getElementById('final-rmScore');
 
 
@@ -52,7 +53,7 @@ let followSuggestionName2 = document.getElementById('follow-suggestion-name-2');
 let followSuggestionHandle2 = document.getElementById('follow-suggestion-@-2');
 // let state = 0;
 let gameState = 'explore';
-let dayCounter = 4;
+let dayCounter = 0;
 let choiceCounter = 1;
 //eventLocked for extra step for Daily Info 
 let eventLocked = true;
@@ -263,7 +264,7 @@ recommendButton2.addEventListener('click',()=>{
         }
          // Day 5 Racist Tweet
          else if (dayCounter ==4){
-        alert("Day 3 Recommended to Trevor! Wait for user feedback...");
+        alert("Day 4 Recommended to Trevor! Wait for user feedback...");
         rmScore+= 35; 
         homeRacistTweets[0].setAttribute("data-visible",true);
         activityRacistFeedback[0].setAttribute("data-visible",true);
@@ -275,6 +276,14 @@ recommendButton2.addEventListener('click',()=>{
         followSuggestionHandle.innerHTML = '@DerrickEvans_WV' ;
         followSuggestionName2.innerHTML = 'Devarim6 Deplorable LaLaLa';
         followSuggestionHandle2.innerHTML = '@devarim6' ;   
+
+            profileBG[0].setAttribute("data-extreme",true);
+            profilePic[0].setAttribute("data-extreme",true);
+            trevorPFP[0].setAttribute("data-extreme",true);
+
+            for (var i = 0; i < profileTweetPFP.length; i++) {
+            profileTweetPFP[i].setAttribute("data-extreme", true);
+            }
         }
     }
     
@@ -317,11 +326,16 @@ recommendButtonNav.addEventListener('click', () => {
         twitterInterfaceSection.setAttribute("data-visible",false);
         dailySuggestionSection.setAttribute("data-visible",true);
         playRecommendSFX(); } 
-    else if (gameState =='explore' && dayCounter ==5){
+    else if (gameState =='explore' && dayCounter ==5 && rmScore <100){
         twitterInterfaceSection.setAttribute("data-visible",false);
-        endScene.setAttribute("data-visible",true);
+        endSlideLost.setAttribute("data-visible",true);
         finalScore.innerHTML='Final Revenue:'+rmScore +'/100$'
     }
+    // else if (gameState =='explore' && dayCounter ==5 && rmScore >=100){
+    //     twitterInterfaceSection.setAttribute("data-visible",false);
+    //     endSlideWin.setAttribute("data-visible",true);
+    //     finalScore.innerHTML='Final Revenue:'+rmScore +'/100$'
+    // }
    
     // console.log(dayEventCounter);
 });
@@ -376,13 +390,7 @@ function updateDailyInfo(){
         recommendButtonNav.innerHTML='AI Assessment';
         recommendButtonNav.style.backgroundColor = 'red';
 
-        profileBG[0].setAttribute("data-extreme",true);
-        profilePic[0].setAttribute("data-extreme",true);
-        trevorPFP[0].setAttribute("data-extreme",true);
-
-        for (var i = 0; i < profileTweetPFP.length; i++) {
-         profileTweetPFP[i].setAttribute("data-extreme", true);
-        }
+        
     }
 }
 

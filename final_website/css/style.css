@@ -164,11 +164,21 @@ h2 {
     background-color: black !important;
     padding-inline: clamp(3rem,40vw,6rem);
     overflow: hidden;
-       min-height: 100vh;
-       width: 100%;
-       text-align: center;
-       align-items: center;
-       justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+#end-slide-win{
+    background: url(../assets/images/twitter-bg.png) center center ;
+    background-size: cover;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .mission-msg p,
 .welcome-msg-wrapper p{
@@ -473,13 +483,15 @@ border-radius: 1rem;
 .activity-racist-feedback[data-visible='false'],
 .profile-racist-tweets[data-visible='false'],
 .profile-other-tweets[data-visible='false'],
-#end-slide[data-visible='false']{
+#end-slide[data-visible='false'],
+#end-slide-win[data-visible='false']{
     display: none;
 }
 .welcome-slides[data-slide-active='true'],
 .profile-racist-tweets[data-visible='true'],
 .profile-other-tweets[data-visible='true'],
-#end-slide[data-visible='true']{
+#end-slide[data-visible='true'],
+#end-slide-win[data-visible='true']{
     display:flex;
 }
 
@@ -548,8 +560,8 @@ border-radius: 1rem;
 .profile-pic[data-extreme='true'],
 .profile-tweet-pfp[data-extreme=true],
 .trevor-pfp[data-extreme=true]{
-    background:url('../assets/images/trevor/murica-first.jpg') center center  no-repeat;
-    background-size: contain;
+    background:url('../assets/images/trevor/murica-first.png') center center  no-repeat;
+    background-size: cover;
 }
 .profile-info-bottom{
     position: relative;
