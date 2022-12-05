@@ -1,6 +1,7 @@
 //Tabs is on nav, Pages is on Main area
-var tweetSFX = new Audio('./assets/audios/tweet.mp3');
+var tweetSFX = new Audio('./assets/audios/tweet2.mp3');
 var tabSFX = new Audio('./assets/audios/beep-sfx.mp3');
+var recommendSFX =new Audio('./assets/audios/recommend-sfx.mp3');
 
 
 var tabs = document.getElementsByClassName("tabs-wrapper");
@@ -84,6 +85,7 @@ document.body.addEventListener('click', () => {
 
 // RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE 
 recommendButton1.addEventListener('click',()=>{
+    playRecommendSFX();
     if (gameState =='recommend') {
         gameState ='info';
        
@@ -159,7 +161,7 @@ recommendButton1.addEventListener('click',()=>{
             followSuggestionHandle2.innerHTML = '@PATRIOT2117';  
         }
     }
-    playTabSFX();
+    
     updateRM();
     updateDailyInfo();
     updateChoices();
@@ -168,6 +170,7 @@ recommendButton1.addEventListener('click',()=>{
 
 
 recommendButton2.addEventListener('click',()=>{
+    playRecommendSFX();
     // dayEventCounter = 1;
     // console.log('clicked');
     // console.log(dayEventCounter);
@@ -251,7 +254,6 @@ recommendButton2.addEventListener('click',()=>{
         followSuggestionHandle2.innerHTML = '@devarim6' ;   
         }
     }
-    playTabSFX();
     updateRM();
     updateDailyInfo();
     updateChoices();
@@ -291,7 +293,7 @@ recommendButtonNav.addEventListener('click', () => {
         dailyInfoSection.setAttribute("data-visible",false);
         twitterInterfaceSection.setAttribute("data-visible",false);
         dailySuggestionSection.setAttribute("data-visible",true);
-        playTabSFX();
+        playRecommendSFX();
     } 
     // console.log(dayEventCounter);
 });
@@ -428,10 +430,14 @@ let slideCounter = 0;
 
 function playTabSFX(){
  tabSFX.currentTime = 0;
+ tabSFX.volume = 0.1;
  tabSFX.play();
-
 }
-
+function playRecommendSFX(){
+    recommendSFX.currentTime = 0;
+    recommendSFX.volume = 1;
+    recommendSFX.play();
+   }
    
 
     
