@@ -10,12 +10,12 @@ class RevenueMeter{
 
 
     setValue(newValue){
-        if (newValue <0){
-            newValue = 0;
-        }
-        if (newValue >100){
-            newValue = 100;
-        }
+        // if (newValue <0){
+        //     newValue = 0;
+        // }
+        // if (newValue >100){
+        //     newValue = 100;
+        // }
 
         this.value = newValue;
         this.update();

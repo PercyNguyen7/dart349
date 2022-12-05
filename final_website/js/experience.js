@@ -112,7 +112,7 @@ recommendButton1.addEventListener('click',()=>{
         // Day 2 Other Tweet
         else if (dayCounter ==1){
             alert("Day 2 Recommended to Trevor! Wait for user feedback...");
-            rmScore-= 15;      
+            rmScore-= 10;      
             homeOtherTweets[3].setAttribute("data-visible",true);
             activityOtherFeedback[3].setAttribute("data-visible",true);
             trendingTopic1.innerHTML='Abolition of Slavery';
@@ -153,7 +153,7 @@ recommendButton1.addEventListener('click',()=>{
          // Day 5 Legit Tweet
          else if (dayCounter ==4){
             alert("Day 5 Recommended to Trevor! Wait for user feedback...");
-            rmScore-= 10;    
+            rmScore-= 5;    
             homeOtherTweets[0].setAttribute("data-visible",true);
             trendingTopic1.innerHTML='Brainwashed';
             trendingTopic2.innerHTML='Died Suddenly';
@@ -163,7 +163,6 @@ recommendButton1.addEventListener('click',()=>{
             followSuggestionHandle2.innerHTML = '@PATRIOT2117';  
         }
     }
-    
     
     updateDailyInfo();
     updateChoices();
@@ -187,7 +186,7 @@ recommendButton2.addEventListener('click',()=>{
          // Day 1 Other Tweet
         if (dayCounter == 0){
         alert("Day 1 Recommended to Trevor! Wait for user feedback...");
-        rmScore-= 10;
+        rmScore-= 15;
         homeOtherTweets[4].setAttribute("data-visible",true);
         activityOtherFeedback[4].setAttribute("data-visible",true);
 
@@ -202,7 +201,7 @@ recommendButton2.addEventListener('click',()=>{
         // Day 2 Racist
         else if (dayCounter ==1){
         alert("Day 2 Recommended to Trevor! Wait for user feedback...");
-        rmScore+= 25;
+        rmScore+= 20;
         homeRacistTweets[3].setAttribute("data-visible",true);
         activityRacistFeedback[3].setAttribute("data-visible",true);
 
@@ -216,7 +215,7 @@ recommendButton2.addEventListener('click',()=>{
         // Day 3 Other Tweet
         else if (dayCounter ==2){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
-        rmScore-= 15; 
+        rmScore-= 10; 
         homeOtherTweets[2].setAttribute("data-visible",true); 
         activityOtherFeedback[2].setAttribute("data-visible",true);
 
@@ -230,7 +229,7 @@ recommendButton2.addEventListener('click',()=>{
          // Day 4 Other Tweet
          else if (dayCounter ==3){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
-        rmScore-= 10;   
+        rmScore-= 5;   
         homeOtherTweets[1].setAttribute("data-visible",true);
         activityOtherFeedback[1].setAttribute("data-visible",true);
 
@@ -267,12 +266,12 @@ function resetFollowSuggestion(){
     followSuggestionHandle2.innerHTML = '' ;
 }
 function updateRM(){
-    if (rmScore <0){
-        rmScore = 0
-    }
-    if (rmScore >100){
-        rmScore = 100;
-    }
+    // if (rmScore <0){
+    //     rmScore = 0
+    // }
+    // if (rmScore >100){
+    //     rmScore = 100;
+    // }
     rmBar.setValue(rmScore);
 }
 // RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE RECOMMEND PHASE 
@@ -340,7 +339,7 @@ function updateChoices(){
 function updateDailyInfo(){
     dayCounter++;
     infoDayCounter.innerHTML = 'Day '+ dayCounter;
-    // infoRevenueCounter.innerHTML= rmScore+ '$';
+    infoRevenueCounter.innerHTML= rmScore+ '$';
 
     navDayCounter.innerHTML = 'Day '+ dayCounter;
     // navRevenueCounter.innerHTML= rmScore+ '$';
