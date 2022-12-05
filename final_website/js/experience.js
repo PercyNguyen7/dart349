@@ -235,7 +235,7 @@ recommendButton2.addEventListener('click',()=>{
         // Day 3 Other Tweet
         else if (dayCounter ==2){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
-        rmScore-= 10; 
+        rmScore-= 5; 
         homeOtherTweets[2].setAttribute("data-visible",true); 
         activityOtherFeedback[2].setAttribute("data-visible",true);
         profileOtherTweets[2].setAttribute("data-visible",true);
@@ -330,12 +330,13 @@ recommendButtonNav.addEventListener('click', () => {
         twitterInterfaceSection.setAttribute("data-visible",false);
         endSlideLost.setAttribute("data-visible",true);
         finalScore.innerHTML='Final Revenue:'+rmScore +'/100$'
+        playRecommendSFX();
     }
-    // else if (gameState =='explore' && dayCounter ==5 && rmScore >=100){
-    //     twitterInterfaceSection.setAttribute("data-visible",false);
-    //     endSlideWin.setAttribute("data-visible",true);
-    //     finalScore.innerHTML='Final Revenue:'+rmScore +'/100$'
-    // }
+    else if (gameState =='explore' && dayCounter ==5 && rmScore >=100){
+        twitterInterfaceSection.setAttribute("data-visible",false);
+        endSlideWin.setAttribute("data-visible",true);
+        finalScore.innerHTML='Final Revenue:'+rmScore +'/100$'
+    }
    
     // console.log(dayEventCounter);
 });
