@@ -12,6 +12,9 @@ let homeRacistTweets = document.getElementsByClassName('home-racist-tweets');
 let homeOtherTweets = document.getElementsByClassName('home-other-tweets');
 let activityOtherFeedback = document.getElementsByClassName('activity-other-feedback');
 let activityRacistFeedback = document.getElementsByClassName('activity-racist-feedback');
+let profileOtherTweets = document.getElementsByClassName('profile-other-tweets');
+let profileRacistTweets = document.getElementsByClassName('profile-racist-tweets');
+
 // var slidesWelcome = document.getElementsByClassName("welcome-slides");
 var homeTab = document.getElementById('home-tab');
 var homePage = document.getElementById('home-page');
@@ -128,6 +131,7 @@ recommendButton1.addEventListener('click',()=>{
             rmScore+= 25;   
             homeRacistTweets[2].setAttribute("data-visible",true);
             activityRacistFeedback[2].setAttribute("data-visible",true);
+            profileRacistTweets[2].setAttribute("data-visible",true);
 
             trendingTopic1.innerHTML='Blacks';
             trendingTopic2.innerHTML='Outrage';
@@ -142,6 +146,7 @@ recommendButton1.addEventListener('click',()=>{
             rmScore+= 30; 
             homeRacistTweets[1].setAttribute("data-visible",true);
             activityRacistFeedback[1].setAttribute("data-visible",true);
+            profileRacistTweets[1].setAttribute("data-visible",true);
 
             trendingTopic1.innerHTML='White Replacement';
             trendingTopic2.innerHTML='Conspiracy';
@@ -150,17 +155,20 @@ recommendButton1.addEventListener('click',()=>{
             followSuggestionName2.innerHTML = 'Beau Dixon';
             followSuggestionHandle2.innerHTML = '@BeauDixon__' ;        
         }
-         // Day 5 Legit Tweet
+         // Day 5 Other Tweet
          else if (dayCounter ==4){
             alert("Day 5 Recommended to Trevor! Wait for user feedback...");
             rmScore-= 5;    
             homeOtherTweets[0].setAttribute("data-visible",true);
+            profileOtherTweets[0].setAttribute("data-visible",true);
+            
             trendingTopic1.innerHTML='Brainwashed';
             trendingTopic2.innerHTML='Died Suddenly';
             followSuggestionName.innerHTML = 'Died Suddenly';
             followSuggestionHandle.innerHTML = '@DiedSuddenly_';
             followSuggestionName2.innerHTML = 'Red Always';
             followSuggestionHandle2.innerHTML = '@PATRIOT2117';  
+       
         }
     }
     
@@ -205,6 +213,8 @@ recommendButton2.addEventListener('click',()=>{
         homeRacistTweets[3].setAttribute("data-visible",true);
         activityRacistFeedback[3].setAttribute("data-visible",true);
 
+        profileRacistTweets[3].setAttribute("data-visible",true);
+
         trendingTopic1.innerHTML='Slavery';
         trendingTopic2.innerHTML='All Lives Matter';
         followSuggestionName.innerHTML = 'Escape The Matrix';
@@ -218,6 +228,7 @@ recommendButton2.addEventListener('click',()=>{
         rmScore-= 10; 
         homeOtherTweets[2].setAttribute("data-visible",true); 
         activityOtherFeedback[2].setAttribute("data-visible",true);
+        profileOtherTweets[2].setAttribute("data-visible",true);
 
         trendingTopic1.innerHTML='Oppression';
         trendingTopic2.innerHTML='Abolition Voter';
@@ -232,6 +243,7 @@ recommendButton2.addEventListener('click',()=>{
         rmScore-= 5;   
         homeOtherTweets[1].setAttribute("data-visible",true);
         activityOtherFeedback[1].setAttribute("data-visible",true);
+        profileOtherTweets[1].setAttribute("data-visible",true);
 
         trendingTopic1.innerHTML='Oppression';
         trendingTopic2.innerHTML='Abolition Voter';
@@ -246,6 +258,7 @@ recommendButton2.addEventListener('click',()=>{
         rmScore+= 35; 
         homeRacistTweets[0].setAttribute("data-visible",true);
         activityRacistFeedback[0].setAttribute("data-visible",true);
+        profileRacistTweets[0].setAttribute("data-visible",true);
 
         trendingTopic1.innerHTML='White Replacement';
         trendingTopic2.innerHTML='Conspiracy';

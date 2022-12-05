@@ -460,10 +460,14 @@ border-radius: 1rem;
 .home-other-tweets[data-visible='false'],
 .home-initial-tweets[data-visible='false'],
 .activity-other-feedback[data-visible='false'],
-.activity-racist-feedback[data-visible='false']{
+.activity-racist-feedback[data-visible='false'],
+.profile-racist-tweets[data-visible='false'],
+.profile-other-tweets[data-visible='false']{
     display: none;
 }
-.welcome-slides[data-slide-active='true']{
+.welcome-slides[data-slide-active='true'],
+.profile-racist-tweets[data-visible='true'],
+.profile-other-tweets[data-visible='true']{
     display:flex;
 }
 
