@@ -274,8 +274,8 @@ recommendButton2.addEventListener('click',()=>{
         trendingTopic2.innerHTML='Conspiracy';
         followSuggestionName.innerHTML = 'Derrick Evans';
         followSuggestionHandle.innerHTML = '@DerrickEvans_WV' ;
-        followSuggestionName2.innerHTML = 'Devarim6 Deplorable LaLaLa';
-        followSuggestionHandle2.innerHTML = '@devarim6' ;   
+        followSuggestionName2.innerHTML = 'MAGA 𝘰𝘳𝘪𝘨𝘪𝘯𝘢𝘭𝘪𝘴𝘵';
+        followSuggestionHandle2.innerHTML = '@MAGAoriginalist' ;   
 
             profileBG[0].setAttribute("data-extreme",true);
             profilePic[0].setAttribute("data-extreme",true);
