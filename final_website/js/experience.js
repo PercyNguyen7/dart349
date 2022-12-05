@@ -79,6 +79,8 @@ document.body.addEventListener('click', () => {
         twitterInterfaceSection.setAttribute("data-visible",true);
         dailySuggestionSection.setAttribute("data-visible",false);
         eventLocked =true;
+        setTimeout(updateRM, 100);
+        
         // console.log(eventLocked);
     }
 });
@@ -162,7 +164,7 @@ recommendButton1.addEventListener('click',()=>{
         }
     }
     
-    updateRM();
+    
     updateDailyInfo();
     updateChoices();
     
@@ -254,7 +256,7 @@ recommendButton2.addEventListener('click',()=>{
         followSuggestionHandle2.innerHTML = '@devarim6' ;   
         }
     }
-    updateRM();
+    
     updateDailyInfo();
     updateChoices();
 });
