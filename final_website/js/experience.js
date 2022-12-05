@@ -21,8 +21,14 @@ var homePage = document.getElementById('home-page');
 var profileTab = document.getElementById('profile-tab');
 var profilePage = document.getElementById('profile-page');
 
+let profilePic = document.getElementsByClassName('profile-pic');
+let profileTweetPFP = document.getElementsByClassName('profile-tweet-pfp');
+let trevorPFP = document.getElementsByClassName('trevor-pfp');
+let profileBG =document.getElementsByClassName('profile-bg');
+
 let endScene = document.getElementById('end-slide');
 let finalScore = document.getElementById('final-rmScore');
+
 
 let infoRevenueCounter = document.getElementById('revenue-counter');
 let infoDayCounter =document.getElementById('day-counter');
@@ -365,9 +371,18 @@ function updateDailyInfo(){
     navDayCounter.innerHTML = 'Day '+ dayCounter;
     // navRevenueCounter.innerHTML= rmScore+ '$';
 
+    //last day day 5
     if (dayCounter ==5){
         recommendButtonNav.innerHTML='AI Assessment';
         recommendButtonNav.style.backgroundColor = 'red';
+
+        profileBG[0].setAttribute("data-extreme",true);
+        profilePic[0].setAttribute("data-extreme",true);
+        trevorPFP[0].setAttribute("data-extreme",true);
+
+        for (var i = 0; i < profileTweetPFP.length; i++) {
+         profileTweetPFP[i].setAttribute("data-extreme", true);
+        }
     }
 }
 
