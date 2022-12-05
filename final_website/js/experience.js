@@ -186,7 +186,7 @@ recommendButton2.addEventListener('click',()=>{
          // Day 1 Other Tweet
         if (dayCounter == 0){
         alert("Day 1 Recommended to Trevor! Wait for user feedback...");
-        rmScore-= 15;
+        rmScore-= 10;
         homeOtherTweets[4].setAttribute("data-visible",true);
         activityOtherFeedback[4].setAttribute("data-visible",true);
 
