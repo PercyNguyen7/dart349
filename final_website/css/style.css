@@ -803,8 +803,8 @@ border-radius: 1rem;
 .ending-img-wrapper>img{
     max-width: 20rem;
 }
-.ending-img-wrapper-2{
-    max-width: 60%;
+.ending-img-wrapper-2>img{
+    max-width: 50%;
 }
 
 /* @supports (backdrop-filter: blur(1rem)) {
