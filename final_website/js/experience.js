@@ -1,5 +1,6 @@
 //Tabs is on nav, Pages is on Main area
 var tweetSFX = new Audio('./assets/audios/tweet.mp3');
+var tabSFX = new Audio('./assets/audios/tab-button.mp3');
 
 
 var tabs = document.getElementsByClassName("tabs-wrapper");
@@ -348,24 +349,28 @@ homeTab.addEventListener('click', () => {
     hidePages();
     homeTab.setAttribute("data-tab-active", true);
     homePage.setAttribute("data-visible", true);
+    tabSFX.play();
 });
 
 profileTab.addEventListener('click', () => {
     hidePages();
     profileTab.setAttribute("data-tab-active", true);
     profilePage.setAttribute("data-visible", true);
+    tabSFX.play();
 });
 
 dataTab.addEventListener('click', () => {
     hidePages();
     dataTab.setAttribute("data-tab-active", true);
     dataPage.setAttribute("data-visible", true);
+    tabSFX.play();
 });
 
 activityTab.addEventListener('click', () => {
     hidePages();
     activityTab.setAttribute("data-tab-active", true);
     activityPage.setAttribute("data-visible",true);
+    tabSFX.play();
 });
 
 function hidePages() {
