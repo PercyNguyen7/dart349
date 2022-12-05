@@ -21,7 +21,8 @@ var homePage = document.getElementById('home-page');
 var profileTab = document.getElementById('profile-tab');
 var profilePage = document.getElementById('profile-page');
 
-let endScene = document.getElementById('end-scene');
+let endScene = document.getElementById('end-slide');
+let finalScore = document.getElementById('final-rmScore');
 
 let infoRevenueCounter = document.getElementById('revenue-counter');
 let infoDayCounter =document.getElementById('day-counter');
@@ -45,7 +46,7 @@ let followSuggestionName2 = document.getElementById('follow-suggestion-name-2');
 let followSuggestionHandle2 = document.getElementById('follow-suggestion-@-2');
 // let state = 0;
 let gameState = 'explore';
-let dayCounter = 0;
+let dayCounter = 4;
 let choiceCounter = 1;
 //eventLocked for extra step for Daily Info 
 let eventLocked = true;
@@ -313,7 +314,7 @@ recommendButtonNav.addEventListener('click', () => {
     else if (gameState =='explore' && dayCounter ==5){
         twitterInterfaceSection.setAttribute("data-visible",false);
         endScene.setAttribute("data-visible",true);
-
+        finalScore.innerHTML='Final Revenue:'+rmScore +'/100$'
     }
    
     // console.log(dayEventCounter);
