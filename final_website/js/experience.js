@@ -8,6 +8,8 @@ let racistChoices = document.getElementsByClassName('racist-tweets');
 let otherChoices = document.getElementsByClassName('other-tweets');
 let homeRacistTweets = document.getElementsByClassName('home-racist-tweets');
 let homeOtherTweets = document.getElementsByClassName('home-other-tweets');
+let activityOtherFeedback = document.getElementsByClassName('activity-other-feedback');
+let activityRacistFeedback = document.getElementsByClassName('activity-racist-feedback');
 // var slidesWelcome = document.getElementsByClassName("welcome-slides");
 var homeTab = document.getElementById('home-tab');
 var homePage = document.getElementById('home-page');
@@ -93,6 +95,8 @@ recommendButton1.addEventListener('click',()=>{
             alert("Day 1 Recommended to Trevor! Wait for user feedback...");
             rmScore += 15;
             homeRacistTweets[4].setAttribute("data-visible",true);
+            activityRacistFeedback[4].setAttribute("data-visible",true);
+
             trendingTopic1.innerHTML='Elon Musk';
             trendingTopic2.innerHTML='Nazis';
             followSuggestionName.innerHTML = 'Elon Musk';
@@ -105,6 +109,7 @@ recommendButton1.addEventListener('click',()=>{
             alert("Day 2 Recommended to Trevor! Wait for user feedback...");
             rmScore-= 15;      
             homeOtherTweets[3].setAttribute("data-visible",true);
+            activityOtherFeedback[3].setAttribute("data-visible",true);
             trendingTopic1.innerHTML='Abolition of Slavery';
             trendingTopic2.innerHTML='United Nations';
             followSuggestionName.innerHTML = 'United Nations';
@@ -116,7 +121,9 @@ recommendButton1.addEventListener('click',()=>{
         else if (dayCounter ==2){
             alert("Day 3 Recommended to Trevor! Wait for user feedback...");
             rmScore+= 25;   
-            homeRacistTweets[2].setAttribute("data-visible",true); 
+            homeRacistTweets[2].setAttribute("data-visible",true);
+            activityRacistFeedback[2].setAttribute("data-visible",true);
+
             trendingTopic1.innerHTML='Blacks';
             trendingTopic2.innerHTML='Outrage';
             followSuggestionName.innerHTML = 'QUINCY WILSON';
@@ -129,6 +136,8 @@ recommendButton1.addEventListener('click',()=>{
             alert("Day 4 Recommended to Trevor! Wait for user feedback...");
             rmScore+= 30; 
             homeRacistTweets[1].setAttribute("data-visible",true);
+            activityRacistFeedback[1].setAttribute("data-visible",true);
+
             trendingTopic1.innerHTML='White Replacement';
             trendingTopic2.innerHTML='Conspiracy';
             followSuggestionName.innerHTML = 'Ella Maulding';
@@ -144,9 +153,9 @@ recommendButton1.addEventListener('click',()=>{
             trendingTopic1.innerHTML='Brainwashed';
             trendingTopic2.innerHTML='Died Suddenly';
             followSuggestionName.innerHTML = 'Died Suddenly';
-            followSuggestionHandle.innerHTML = '@DiedSuddenly_' ;
+            followSuggestionHandle.innerHTML = '@DiedSuddenly_';
             followSuggestionName2.innerHTML = 'Red Always';
-            followSuggestionHandle2.innerHTML = '@PATRIOT2117' ;  
+            followSuggestionHandle2.innerHTML = '@PATRIOT2117';  
         }
     }
     updateRM();
@@ -173,6 +182,8 @@ recommendButton2.addEventListener('click',()=>{
         alert("Day 1 Recommended to Trevor! Wait for user feedback...");
         rmScore-= 10;
         homeOtherTweets[4].setAttribute("data-visible",true);
+        activityOtherFeedback[4].setAttribute("data-visible",true);
+
         trendingTopic1.innerHTML='Homies';
         trendingTopic2.innerHTML='Funny';
         followSuggestionName.innerHTML = '𝑮𝒊𝒐';
@@ -186,6 +197,8 @@ recommendButton2.addEventListener('click',()=>{
         alert("Day 2 Recommended to Trevor! Wait for user feedback...");
         rmScore+= 25;
         homeRacistTweets[3].setAttribute("data-visible",true);
+        activityRacistFeedback[3].setAttribute("data-visible",true);
+
         trendingTopic1.innerHTML='Slavery';
         trendingTopic2.innerHTML='All Lives Matter';
         followSuggestionName.innerHTML = 'Escape The Matrix';
@@ -198,23 +211,36 @@ recommendButton2.addEventListener('click',()=>{
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
         rmScore-= 15; 
         homeOtherTweets[2].setAttribute("data-visible",true); 
-        trendingTopic1.innerHTML='Abolition of Slavery';
-        trendingTopic2.innerHTML='United Nations';
+        activityOtherFeedback[2].setAttribute("data-visible",true);
+
+        trendingTopic1.innerHTML='Oppression';
+        trendingTopic2.innerHTML='Abolition Voter';
         followSuggestionName.innerHTML = 'Black Lives Matter';
-        followSuggestionHandle.innerHTML = '@UN' ;
-        followSuggestionName2.innerHTML = 'António Guterres';
-        followSuggestionHandle2.innerHTML = '@antonioguterres' ; 
+        followSuggestionHandle.innerHTML = '@BlkLivesMatter' ;
+        followSuggestionName2.innerHTML = 'HuffPost BlackVoices';
+        followSuggestionHandle2.innerHTML = '@blackvoices' ; 
         }
          // Day 4 Other Tweet
          else if (dayCounter ==3){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
         rmScore-= 10;   
         homeOtherTweets[1].setAttribute("data-visible",true);
+        activityOtherFeedback[1].setAttribute("data-visible",true);
+
+        trendingTopic1.innerHTML='Oppression';
+        trendingTopic2.innerHTML='Abolition Voter';
+        followSuggestionName.innerHTML = 'UN Climate Change';
+        followSuggestionHandle.innerHTML = '@UNFCCC' ;
+        followSuggestionName2.innerHTML = 'World Meteorological Organization';
+        followSuggestionHandle2.innerHTML = '@WMO' ; 
         }
          // Day 5 Racist Tweet
          else if (dayCounter ==4){
         alert("Day 3 Recommended to Trevor! Wait for user feedback...");
         rmScore+= 35; 
+        homeRacistTweets[0].setAttribute("data-visible",true);
+        activityRacistFeedback[0].setAttribute("data-visible",true);
+
         trendingTopic1.innerHTML='White Replacement';
         trendingTopic2.innerHTML='Conspiracy';
         followSuggestionName.innerHTML = 'Derrick Evans';
