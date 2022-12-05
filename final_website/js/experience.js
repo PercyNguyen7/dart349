@@ -337,7 +337,8 @@ function updateChoices(){
 }
 
 function updateDailyInfo(){
-    dayCounter++;
+    if (dayCounter <5){
+    dayCounter++;}
     infoDayCounter.innerHTML = 'Day '+ dayCounter;
     infoRevenueCounter.innerHTML= rmScore+ '$';
 
