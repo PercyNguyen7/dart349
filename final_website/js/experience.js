@@ -21,6 +21,8 @@ var homePage = document.getElementById('home-page');
 var profileTab = document.getElementById('profile-tab');
 var profilePage = document.getElementById('profile-page');
 
+let endScene = document.getElementById('end-scene');
+
 let infoRevenueCounter = document.getElementById('revenue-counter');
 let infoDayCounter =document.getElementById('day-counter');
 let navRevenueCounter =document.getElementById('revenue-counter-nav');
@@ -300,20 +302,24 @@ recommendButtonNav.addEventListener('click', () => {
     //     dailySuggestionSection.setAttribute("data-visible",true);
     //     twitterInterfaceSection.setAttribute("data-visible",false);
     // }
-    if (gameState =='explore') {
+    if (gameState =='explore' && dayCounter <=4) {
         // dayEventCounter=0;
         gameState ='recommend'
   
         dailyInfoSection.setAttribute("data-visible",false);
         twitterInterfaceSection.setAttribute("data-visible",false);
         dailySuggestionSection.setAttribute("data-visible",true);
-        playRecommendSFX();
-    } 
+        playRecommendSFX(); } 
+    else if (gameState =='explore' && dayCounter ==5){
+        twitterInterfaceSection.setAttribute("data-visible",false);
+        endScene.setAttribute("data-visible",true);
+
+    }
+   
     // console.log(dayEventCounter);
 });
 
 function updateChoices(){
-
     // switch to suggestions for day 1
     if (dayCounter ==1){
         // for (var i = 0; i < racistChoices.length; i++) {}

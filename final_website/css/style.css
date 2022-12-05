@@ -160,6 +160,9 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+#end-slide{
+    background-color: black;
+}
 .mission-msg p,
 .welcome-msg-wrapper p{
     margin: 1rem;
@@ -462,12 +465,14 @@ border-radius: 1rem;
 .activity-other-feedback[data-visible='false'],
 .activity-racist-feedback[data-visible='false'],
 .profile-racist-tweets[data-visible='false'],
-.profile-other-tweets[data-visible='false']{
+.profile-other-tweets[data-visible='false'],
+#end-slide[data-visible='false']{
     display: none;
 }
 .welcome-slides[data-slide-active='true'],
 .profile-racist-tweets[data-visible='true'],
-.profile-other-tweets[data-visible='true']{
+.profile-other-tweets[data-visible='true'],
+#end-slide[data-visible='true']{
     display:flex;
 }
 
