@@ -1,6 +1,6 @@
 //Tabs is on nav, Pages is on Main area
 var tweetSFX = new Audio('./assets/audios/tweet.mp3');
-var tabSFX = new Audio('./assets/audios/tab-button.mp3');
+var tabSFX = new Audio('./assets/audios/beep-sfx.mp3');
 
 
 var tabs = document.getElementsByClassName("tabs-wrapper");
@@ -72,6 +72,7 @@ document.body.addEventListener('click', () => {
         console.log('hello');
     }
     else if (gameState =='info'&& eventLocked ==false) {
+        tweetSFX.play();
         gameState ='explore';
         dailyInfoSection.setAttribute("data-visible",false);
         twitterInterfaceSection.setAttribute("data-visible",true);
@@ -85,7 +86,6 @@ document.body.addEventListener('click', () => {
 recommendButton1.addEventListener('click',()=>{
     if (gameState =='recommend') {
         gameState ='info';
-        tweetSFX.play();
        
         
         dailyInfoSection.setAttribute("data-visible",true);
@@ -159,6 +159,7 @@ recommendButton1.addEventListener('click',()=>{
             followSuggestionHandle2.innerHTML = '@PATRIOT2117';  
         }
     }
+    playTabSFX();
     updateRM();
     updateDailyInfo();
     updateChoices();
@@ -172,7 +173,7 @@ recommendButton2.addEventListener('click',()=>{
     // console.log(dayEventCounter);
     if (gameState =='recommend') {
         gameState ='info';
-        tweetSFX.play();
+        
        
         dailyInfoSection.setAttribute("data-visible",true);
         twitterInterfaceSection.setAttribute("data-visible",false);
@@ -250,7 +251,7 @@ recommendButton2.addEventListener('click',()=>{
         followSuggestionHandle2.innerHTML = '@devarim6' ;   
         }
     }
-
+    playTabSFX();
     updateRM();
     updateDailyInfo();
     updateChoices();
@@ -290,6 +291,7 @@ recommendButtonNav.addEventListener('click', () => {
         dailyInfoSection.setAttribute("data-visible",false);
         twitterInterfaceSection.setAttribute("data-visible",false);
         dailySuggestionSection.setAttribute("data-visible",true);
+        playTabSFX();
     } 
     // console.log(dayEventCounter);
 });
@@ -349,28 +351,28 @@ homeTab.addEventListener('click', () => {
     hidePages();
     homeTab.setAttribute("data-tab-active", true);
     homePage.setAttribute("data-visible", true);
-    tabSFX.play();
+    playTabSFX();
 });
 
 profileTab.addEventListener('click', () => {
     hidePages();
     profileTab.setAttribute("data-tab-active", true);
     profilePage.setAttribute("data-visible", true);
-    tabSFX.play();
+    playTabSFX();
 });
 
 dataTab.addEventListener('click', () => {
     hidePages();
     dataTab.setAttribute("data-tab-active", true);
     dataPage.setAttribute("data-visible", true);
-    tabSFX.play();
+  playTabSFX();
 });
 
 activityTab.addEventListener('click', () => {
     hidePages();
     activityTab.setAttribute("data-tab-active", true);
     activityPage.setAttribute("data-visible",true);
-    tabSFX.play();
+    playTabSFX();
 });
 
 function hidePages() {
@@ -424,8 +426,11 @@ let slideCounter = 0;
         instructionLocked = false;
     })
 
+function playTabSFX(){
+ tabSFX.currentTime = 0;
+ tabSFX.play();
 
-
+}
 
    
 
