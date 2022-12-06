@@ -77,9 +77,10 @@ let closeButton = document.getElementById('close-button');
 
 window.addEventListener("load", () => {
     console.log("page is fully loaded");
-    slidesOrder[0].setAttribute("data-slide-active", false);  
-    twitterInterfaceSection.setAttribute("data-visible", true);
-    instructionLocked = true;
+    // TOGGLE TO DISABLE INSTRUCTION AT THE BEGINNING
+    // slidesOrder[0].setAttribute("data-slide-active", false);  
+    // twitterInterfaceSection.setAttribute("data-visible", true);
+    // instructionLocked = true;
 
 });
 // INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE   
