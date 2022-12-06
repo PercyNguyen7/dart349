@@ -295,6 +295,7 @@ recommendButton2.addEventListener('click',()=>{
 });
 
 aboutButton.addEventListener('click',()=>{
+    playTabSFX();
     aboutSection.setAttribute('data-visible',true);
 });
 closeButton.addEventListener('click',()=>{
@@ -480,6 +481,7 @@ let slideCounter = 0;
     });
 
     instructionButton.addEventListener('click',()=>{
+        playTabSFX();
         slidesOrder[0].setAttribute("data-slide-active", true);  
         twitterInterfaceSection.setAttribute("data-visible", false);
         instructionLocked = false;
