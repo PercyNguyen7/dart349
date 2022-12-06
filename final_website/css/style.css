@@ -175,6 +175,9 @@ margin-top: 1rem;
     align-items: center;
     justify-content: center;
 }
+.welcome>*{
+    max-width:80rem;
+}
 #end-slide{
     background-color: black !important;
     padding-inline: clamp(3rem,40vw,6rem);
@@ -194,6 +197,10 @@ margin-top: 1rem;
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+#end-slide>*,
+#end-slide-win>*{
+    max-width: 80rem;
 }
 .mission-msg p,
 .welcome-msg-wrapper p{
