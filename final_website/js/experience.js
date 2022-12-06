@@ -71,12 +71,15 @@ let rmBar;
 let rmScore = 0;
 rmBar= new RevenueMeter(document.querySelector('.rm-bar'));
 
+let aboutButton = document.getElementById('about-button');
+let aboutSection = document.getElementById('artist-statement');
+let closeButton = document.getElementById('close-button');
 
 window.addEventListener("load", () => {
     console.log("page is fully loaded");
-    // slidesOrder[0].setAttribute("data-slide-active", false);  
-    // twitterInterfaceSection.setAttribute("data-visible", true);
-    // instructionLocked = true;
+    slidesOrder[0].setAttribute("data-slide-active", false);  
+    twitterInterfaceSection.setAttribute("data-visible", true);
+    instructionLocked = true;
 
 });
 // INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE INFO PHASE   
@@ -290,6 +293,14 @@ recommendButton2.addEventListener('click',()=>{
     updateDailyInfo();
     updateChoices();
 });
+
+aboutButton.addEventListener('click',()=>{
+    aboutSection.setAttribute('data-visible',true);
+});
+closeButton.addEventListener('click',()=>{
+    aboutSection.setAttribute('data-visible',false);
+});
+
 function resetFollowSuggestion(){
     followSuggestionName.innerHTML = '';
     followSuggestionHandle.innerHTML = '' ;

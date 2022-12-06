@@ -125,20 +125,35 @@ main {
 .activity-wrapper>h3{
     margin-bottom: 1rem;
 }
-/* h1 {
-    font-size: clamp(3rem, 10vw, 6rem);
-    text-align: center;
-    text-transform: uppercase;
-}
 
-h2 {
-    font-size: clamp(3rem, 10vw, 5rem);
-    text-transform: uppercase;
-} */
+#artist-statement{
+    position:fixed;
+    width: 100%;
+    height:100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+    text-align: left;
+    padding-inline: clamp(3rem,40vw,6rem); 
+}
+#artist-statement>*{
+    max-width: 60rem;
+}
+#artist-statement>p{
+margin-top: 1rem;
+}
 .click-instruction{
     position: absolute;
     bottom:2rem;
     right:3rem;
+}
+#close-button{
+    position: fixed;
+    top: 2rem;
+    right:2rem;
+    cursor: pointer;
 }
 
 .tabs {
@@ -149,7 +164,7 @@ h2 {
     background-size: cover;
 }
 .welcome{
-    padding-inline: clamp(3rem,40vw,6rem); 
+    padding-inline: clamp(3rem,40vw,10rem); 
     /* background-color: var(--clr-twitter-blue); */
     background: url(../assets/images/twitter-bg.png) center center ;
     background-size: cover;
@@ -484,14 +499,16 @@ border-radius: 1rem;
 .profile-racist-tweets[data-visible='false'],
 .profile-other-tweets[data-visible='false'],
 #end-slide[data-visible='false'],
-#end-slide-win[data-visible='false']{
+#end-slide-win[data-visible='false'],
+#artist-statement[data-visible='false']{
     display: none;
 }
 .welcome-slides[data-slide-active='true'],
 .profile-racist-tweets[data-visible='true'],
 .profile-other-tweets[data-visible='true'],
 #end-slide[data-visible='true'],
-#end-slide-win[data-visible='true']{
+#end-slide-win[data-visible='true'],
+#artist-statement[data-visible='true']{
     display:flex;
 }
 
@@ -543,10 +560,6 @@ border-radius: 1rem;
     height:15rem;
 }
 
-.profile-bg[data-extreme='false']{
-    background: url('../assets/images/trevor/maga-hat.jpg') center center  no-repeat;
-    background-size:cover;
-}
 .profile-pic{
     background:url('../assets/images/trevor/maga-hat.jpg') center center  no-repeat;
     background-size: cover;
